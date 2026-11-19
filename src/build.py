@@ -80,7 +80,7 @@ EXTRA_CSS = """
 .part-head .subnav a { color: var(--strap-fg); text-decoration: none; border: 1px solid rgba(255,255,255,.28); border-radius: 999px; padding: 4px 12px; font-size: 13.5px }
 .part-head .subnav a:hover { border-color: var(--tag); color: var(--tag) }
 .part .group:first-of-type { border-top: 0 }
-@media (max-width: 820px) { .doors { grid-template-columns: minmax(0,1fr) } .part-head { padding: 18px } }
+@media (max-width: 820px) { .doors { grid-template-columns: minmax(0,1fr) } .part-head { padding: 18px } .part-head .subnav { flex-wrap: nowrap; gap: 6px; overflow-x: auto; scrollbar-width: none; margin-inline: -2px; padding-inline: 2px } .part-head .subnav::-webkit-scrollbar { display: none } .part-head .subnav a { white-space: nowrap; flex: none; font-size: 12.5px; padding: 4px 10px } }
 """
 
 EXTRA_JS = """
