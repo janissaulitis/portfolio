@@ -1,0 +1,116 @@
+  <!-- ===================== WHERE AI PAYS ===================== -->
+  <section class="group" id="ai-plan">
+    <h2>Where AI pays <small>2 tools</small></h2>
+
+    <article class="proj" id="finder">
+      <div class="media"><video controls preload="none" playsinline poster="{M}media/finder.jpg" src="{M}media/finder.mp4" aria-label="Demo video: Where AI Pays"></video></div>
+      <div class="story">
+        <div class="strap"><h3>Where AI Pays</h3><span>Claude Code</span></div>
+        <p class="problem">A manager knows AI could help, but not which project pays back first.</p>
+        <ul class="pts">
+          <li><b>Does</b><span>Ranks AI projects by what they save after running costs, and shows the maths</span></li>
+          <li><b>Result</b><span><code>€695</code> a month and 24 staff hours freed for a sample lender. The top idea pays back in 12 months</span></li>
+          <li class="ai"><b>Checked</b><span>Every estimate shows its own formula, so each number can be checked by hand</span></li>
+          <li><b>Safeguard</b><span>Each idea carries a risk label, and a plain warning where personal data is involved</span></li>
+          <li><b>Tools used</b><span>Claude Code, Python, Streamlit</span></li>
+        </ul>
+        <details class="more"><summary>Read more</summary><p>Pick an industry and what takes the team the most time, then roughly how much of it there is. It ranks the AI projects worth starting with: what each saves, what it costs to run, how long it takes to pay back, and the risk. Each idea opens to the first three steps and the maths behind the number, and the whole plan downloads as a one-page PDF.</p></details>
+        <div class="actions"><a class="btn" href="https://ai-opportunity-finder.streamlit.app/" target="_blank" rel="noopener">Try it live →</a><span class="quiet">May take 30 s to wake up</span></div>
+      </div>
+    </article>
+
+    <article class="proj" id="cost">
+      <div class="media"><video controls preload="none" playsinline poster="{M}media/cost.jpg" src="{M}media/cost.mp4" aria-label="Demo video: AI Cost Check"></video></div>
+      <div class="story">
+        <div class="strap"><h3>AI Cost Check</h3><span>Claude Code</span></div>
+        <p class="problem">AI prices are quoted per million tokens. A manager needs a monthly figure in euros.</p>
+        <ul class="pts">
+          <li><b>Does</b><span>Prices one AI task on nine current models, and counts the people who check its work</span></li>
+          <li><b>Result</b><span>Sorting 2,000 emails a month: the AI costs <code>€0.47</code>, you keep about <code>€670</code></span></li>
+          <li class="ai"><b>Checked</b><span>Model prices checked 13 Nov 2026, and every cost line is shown</span></li>
+          <li><b>Finding</b><span>The choice of model matters far less than how much checking the work needs</span></li>
+          <li><b>Tools used</b><span>Claude Code, Python, Streamlit</span></li>
+        </ul>
+        <details class="more"><summary>Read more</summary><p>Describe the task: what the AI should do, how many a month, how long a person takes today and what an hour costs. It shows what you keep each month, where the freed staff time goes (people checking, hosting, the AI itself), when setup pays back, and the same work priced on nine current models.</p></details>
+        <div class="actions"><a class="btn" href="https://ai-cost-check.streamlit.app/" target="_blank" rel="noopener">Try it live →</a><span class="quiet">May take 30 s to wake up</span></div>
+      </div>
+    </article>
+  </section>
+
+  <!-- ===================== BACK OFFICE ===================== -->
+  <section class="group" id="back-office">
+    <h2>Back office <small>2 tools</small></h2>
+
+    <article class="proj" id="books">
+      <div class="media"><video controls preload="none" playsinline poster="{M}media/books.jpg" src="{M}media/books.mp4" aria-label="Demo video: Auto Books"></video></div>
+      <div class="story">
+        <div class="strap"><h3>Auto Books</h3><span>Claude Code</span></div>
+        <p class="problem">Every month someone sorts the bank export by hand for the accountant.</p>
+        <ul class="pts">
+          <li><b>Does</b><span>Sorts each transaction into a category and learns from every correction</span></li>
+          <li><b>Result</b><span>October: <code>63 of 67</code> sorted on its own. The 4 it isn't sure about go to a person</span></li>
+          <li class="ai"><b>Tested</b><span>On 3 months it never saw: 86% sorted alone in month 1, 94% by month 3, 0 sorted wrongly</span></li>
+          <li><b>Safeguard</b><span>Below 70% sure it asks instead of guessing. No AI service, so nothing leaves the app</span></li>
+          <li><b>Tools used</b><span>Claude Code, Python (scikit-learn), Streamlit</span></li>
+        </ul>
+        <details class="more"><summary>Read more</summary><p>Upload a month's bank export (or use the sample company). It sorts every payment into a category, totals money in, business costs and a rough VAT figure, and leaves anything it isn't sure about for a person. Confirm those, and next month the same suppliers are sorted automatically. The data is an invented year for a small Latvian company, written the way bank exports look.</p></details>
+        <div class="actions"><a class="btn" href="https://bookkeeping-sorter.streamlit.app/" target="_blank" rel="noopener">Try it live →</a><span class="quiet">May take 30 s to wake up</span></div>
+      </div>
+    </article>
+
+    <article class="proj" id="inbox">
+      <div class="media"><video controls preload="none" playsinline poster="{M}media/inbox.jpg" src="{M}media/inbox.mp4" aria-label="Demo video: Inbox Router"></video></div>
+      <div class="story">
+        <div class="strap"><h3>Inbox Router</h3><span>Claude Code + Gemini</span></div>
+        <p class="problem">Customer emails arrive in six languages, and the urgent or risky ones wait in the queue.</p>
+        <ul class="pts">
+          <li><b>Does</b><span>Sorts each email by topic and urgency, routes it, and drafts a reply in the customer's language</span></li>
+          <li><b>Result</b><span>Fraud, hardship, complaints and data requests always go to a person. Routine ones get a draft</span></li>
+          <li class="ai"><b>Tested</b><span>96 emails with known answers: <code>95</code> sorted exactly right, 0 risky emails missed</span></li>
+          <li class="ai"><b>AI mistakes</b><span>Rated a scam-call email as medium urgency, not high. It still went to a person, and the miss is shown on the test page</span></li>
+          <li><b>Tools used</b><span>Claude Code, Google Gemini, Python, Streamlit</span></li>
+        </ul>
+        <details class="more"><summary>Read more</summary><p>The AI reads each email and suggests the topic, urgency, a short summary and a draft reply. Fixed business rules then decide the team, and force a person to review fraud, hardship, complaints, data requests or anything the AI is unsure about. The 96-email test covers 16 emails per language, including tricky ones: two problems in one email, sarcasm, missing diacritics, and a customer who paid a scammer.</p></details>
+        <div class="actions"><a class="btn" href="https://ai-inbox-triage.streamlit.app/" target="_blank" rel="noopener">Try it live →</a><span class="quiet">May take 30 s to wake up</span></div>
+      </div>
+    </article>
+  </section>
+
+  <!-- ===================== LENDING ===================== -->
+  <section class="group" id="lending">
+    <h2>Lending <small>2 tools</small></h2>
+
+    <article class="proj" id="early">
+      <div class="media"><video controls preload="none" playsinline poster="{M}media/early.jpg" src="{M}media/early.mp4" aria-label="Demo video: Early Call"></video></div>
+      <div class="story">
+        <div class="strap"><h3>Early Call</h3><span>Claude Code</span></div>
+        <p class="problem">Collections calls customers once they're already late.</p>
+        <ul class="pts">
+          <li><b>Does</b><span>Scores new loans for the risk of going 30+ days late, with the reasons in plain words</span></li>
+          <li><b>Result</b><span><code>40%</code> of the loans on its call list really went late, against 15% at random</span></li>
+          <li class="ai"><b>Tested</b><span>Trained on months 1–18, tested on 6 months it never saw. A black-box model did no better, so the explainable one is kept</span></li>
+          <li><b>Safeguard</b><span>Doesn't use gender, age, nationality or family status. Built for who to call early, not for refusing credit</span></li>
+          <li><b>Tools used</b><span>Claude Code, Python (scikit-learn), Streamlit</span></li>
+        </ul>
+        <details class="more"><summary>Read more</summary><p>Each month's new loans get a risk score, and the riskiest go on a call list with the reasons behind every score. Try an application and watch the risk and reasons move, set your own costs to see what calling early is worth (about €2,218 a month with the sample numbers), and check how it behaves market by market. 6,472 invented loans over 24 months in 6 markets.</p></details>
+        <div class="actions"><a class="btn" href="https://loan-risk-model.streamlit.app/" target="_blank" rel="noopener">Try it live →</a><span class="quiet">May take 30 s to wake up</span></div>
+      </div>
+    </article>
+
+    <article class="proj" id="doc">
+      <div class="media"><video controls preload="none" playsinline poster="{M}media/doc.jpg" src="{M}media/doc.mp4" aria-label="Demo video: Statement Check"></video></div>
+      <div class="story">
+        <div class="strap"><h3>Statement Check</h3><span>Claude Code + Gemini</span></div>
+        <p class="problem">Underwriters read every bank statement by hand to check the income an applicant stated.</p>
+        <ul class="pts">
+          <li><b>Does</b><span>Reads a bank statement and checks it against the loan application</span></li>
+          <li><b>Result</b><span>Stated <code>6,500 PLN</code>, salary about 4,200: flagged before anyone approves the loan</span></li>
+          <li class="ai"><b>Tested</b><span>12 tricky statements in 5 languages: 12 of 12 got the right verdict and the right reasons</span></li>
+          <li><b>Safeguard</b><span>The AI only reads the statement. Fixed rules make every check, and a person decides</span></li>
+          <li><b>Tools used</b><span>Claude Code, Google Gemini, Python, Streamlit</span></li>
+        </ul>
+        <details class="more"><summary>Read more</summary><p>Gemini reads the statement (any language, any bank layout). Fixed rules then check the name, how recent it is, the income against what was stated, whether income is still coming in, undeclared loans, regular gambling and bounced payments, and list every check with the lines that support it. The test set includes the cases that catch people out: salary paid in two parts, a one-off bonus, irregular self-employed income, a similar but different name.</p></details>
+        <div class="actions"><a class="btn" href="https://loan-doc-checker.streamlit.app/" target="_blank" rel="noopener">Try it live →</a><span class="quiet">May take 30 s to wake up</span></div>
+      </div>
+    </article>
+  </section>

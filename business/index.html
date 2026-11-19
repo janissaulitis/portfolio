@@ -1,0 +1,627 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title>Jānis Saulītis · AI Builds</title>
+<meta name="description" content="Twelve working tools built by directing AI: six for any business (bookkeeping, customer emails, loan checks, risk calls, AI costs) and six for live sports production. Each with a demo video and real test results.">
+<link rel="canonical" href="https://janis-saulitis-portfolio.netlify.app/business/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230e1211'/%3E%3Cpath d='M16 4v3.5M7 8.5l2.4 2.4M25 8.5l-2.4 2.4M3.5 18.5h3.5M25 18.5h3.5' stroke='%23f2c230' stroke-width='2.4' stroke-linecap='round'/%3E%3Cpath d='M8.5 22.5a7.5 7.5 0 0 1 15 0z' fill='%23f2c230'/%3E%3Cpath d='M4 26.5h24' stroke='%2339c48f' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://janis-saulitis-portfolio.netlify.app/business/">
+<meta property="og:title" content="Jānis Saulītis · Working tools built by directing AI">
+<meta property="og:description" content="Twelve working tools built by directing AI: six for any business (bookkeeping, customer emails, loan checks, risk calls, AI costs) and six for live sports production. Each with a demo video and real test results.">
+<meta property="og:image" content="https://janis-saulitis-portfolio.netlify.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://janis-saulitis-portfolio.netlify.app/og.png">
+<meta name="darkreader-lock">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: one calm column of projects, each a 16:9 clip beside its story; titles set like a broadcast lower-third strap */
+:root {
+  --bg: #f5f7f5; --surface: #ffffff; --fg: #111614; --muted: #56625c; --line: #dde3df;
+  --accent: #0b6e4f; --accent-fg: #ffffff; --strap: #0b1f3a; --strap-fg: #ffffff; --tag: #e8b100; --tag-fg: #0b1f3a; --tag-ink: #9a7400;
+  --warn-bg: #fff6dc; --warn-line: #e8c55a; --warn-ink: #8a6100;
+  --display: "Barlow Condensed", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+  --body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0e1211; --surface: #151b19; --fg: #e8eeeb; --muted: #9aa7a1; --line: #26302c;
+  --accent: #39c48f; --accent-fg: #06120d; --strap: #1b3357; --strap-fg: #ffffff; --tag: #f2c230; --tag-fg: #0b1f3a; --tag-ink: #f2c230;
+  --warn-bg: #2a2410; --warn-line: #b8922a; --warn-ink: #f2c230; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #0e1211; --surface: #151b19; --fg: #e8eeeb; --muted: #9aa7a1; --line: #26302c;
+  --accent: #39c48f; --accent-fg: #06120d; --strap: #1b3357; --strap-fg: #ffffff; --tag: #f2c230; --tag-fg: #0b1f3a; --tag-ink: #f2c230;
+  --warn-bg: #2a2410; --warn-line: #b8922a; --warn-ink: #f2c230; color-scheme: dark }
+
+* { box-sizing: border-box }
+html { -webkit-text-size-adjust: 100% }
+body { background: var(--bg); color: var(--fg); font: 400 16px/1.6 var(--body); margin: 0 }
+.wrap { max-width: 1120px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)) }
+a { color: var(--accent) }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px }
+
+/* top bar */
+.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 20px }
+.bar .name { display: inline-flex; align-items: center; gap: 10px; color: var(--fg); text-decoration: none; font: 700 20px/1 var(--display); letter-spacing: .02em; text-transform: uppercase; white-space: nowrap }
+.mark { width: 30px; height: 30px; flex: none; overflow: visible }
+.mark .disc { fill: var(--tag) }
+.mark .rays, .mark .ground { fill: none; stroke: var(--tag); stroke-width: 2.4; stroke-linecap: round }
+.mark .ground { stroke: var(--accent) }
+.bar .name:hover .rays { transform: rotate(-8deg); transform-origin: 16px 22px; transition: transform .3s }
+.bar nav { display: flex; gap: 12px 18px; flex-wrap: wrap; align-items: center; font-size: 14px }
+.bar nav .links { display: contents }
+.icon-btn { display: inline-grid; place-items: center; width: 38px; height: 38px; border: 1px solid var(--line); background: var(--surface); color: var(--fg); border-radius: 999px; cursor: pointer; padding: 0 }
+.icon-btn svg { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round }
+.i-moon { display: none } .is-dark .i-sun { display: none } .is-dark .i-moon { display: block }
+.menu-btn { display: none }
+.bar { position: relative }
+.bar .jump { position: absolute; flex-wrap: nowrap; gap: 0; font-size: 15px; grid-template-columns: minmax(0,1fr); left: 0; right: 0; top: calc(100% - 8px); z-index: 20; display: grid; background: var(--surface); border: 1px solid var(--line); border-top: 3px solid var(--tag); border-radius: 4px 4px 12px 12px; padding: 6px 0; box-shadow: 0 18px 40px rgba(0,0,0,.28) }
+.jump[hidden] { display: none }
+.bar .jump a { display: grid; grid-template-columns: 30px 1fr auto 14px; align-items: center; gap: 10px; padding: 13px 16px; color: var(--fg); text-decoration: none; font: 600 15px/1.2 var(--body) }
+.bar .jump a + a { border-top: 1px solid var(--line) }
+.bar .jump a:active, .bar .jump a:hover { background: var(--bg) }
+.jump .n { font: 500 12px/1 var(--mono); color: var(--accent) }
+.jump .c { font: 500 11px/1 var(--mono); color: var(--muted); text-transform: uppercase; letter-spacing: .06em }
+.jump .go { width: 14px; height: 14px; fill: none; stroke: var(--muted); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round }
+.menu-btn .i-x { display: none } .menu-btn[aria-expanded="true"] .i-bars { display: none } .menu-btn[aria-expanded="true"] .i-x { display: block }
+.menu-btn[aria-expanded="true"] { border-color: var(--tag) }
+.oneliner { display: none; margin: 0; font-size: 16px; color: var(--muted) }
+.toggle { display: none; align-items: center; gap: 6px; border: 1px solid var(--warn-line); background: transparent; color: var(--warn-ink); border-radius: 6px; padding: 8px 12px; font: 600 14px var(--body); cursor: pointer; justify-self: start }
+.bar nav a { color: var(--muted); text-decoration: none }
+.bar nav a:hover { color: var(--fg) }
+
+/* intro */
+.intro { padding-block: 28px 22px; display: grid; gap: 14px; max-width: 900px }
+.kicker { font: 500 12px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--accent) }
+h1 { font: 700 clamp(34px, 4.4vw, 54px)/1.04 var(--display); margin: 0; text-wrap: balance; letter-spacing: .005em }
+.intro .note { margin: 0; font-size: 13px; color: var(--muted) }
+.facts { list-style: none; margin: 4px 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 10px }
+.facts li { min-width: 0; display: grid; gap: 4px; align-content: start; background: var(--surface); border: 1px solid var(--line); border-top: 3px solid var(--accent); border-radius: 6px; padding: 10px 12px }
+.facts li:last-child { border-top-color: var(--tag) }
+.facts b { font: 700 32px/1 var(--display); color: var(--accent) }
+.facts li:last-child b { color: var(--tag-ink) }
+.facts span { font-size: 13.5px; line-height: 1.3; color: var(--fg) }
+
+/* sections */
+.group { scroll-margin-top: 80px; padding-block: 26px 8px; border-top: 1px solid var(--line) }
+.group > h2 { display: flex; align-items: center; gap: 12px; margin: 0 0 18px; font: 700 26px/1 var(--display); text-transform: uppercase; letter-spacing: .02em; color: var(--fg) }
+.group > h2::before { content: ""; width: 6px; height: 26px; border-radius: 2px; background: var(--accent) }
+.group > h2 small { font: 600 11px/1 var(--mono); letter-spacing: .08em; color: var(--accent); border: 1px solid var(--accent); border-radius: 999px; padding: 4px 9px; margin-left: 2px }
+.proj { scroll-margin-top: 80px; display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 32px; padding-block: 18px 40px; align-items: start }
+.media video, .media img { width: 100%; aspect-ratio: 16 / 9; display: block; border-radius: 6px; background: #000; border: 1px solid var(--line); object-fit: cover }
+.media .note { font-size: 13px; color: var(--muted); margin-top: 8px }
+.story { display: grid; gap: 14px; min-width: 0 }
+
+.strap { display: inline-flex; align-items: stretch; max-width: 100%; font-family: var(--display); text-transform: uppercase; justify-self: start }
+.strap h3 { margin: 0; min-width: 0; overflow-wrap: anywhere; background: var(--strap); color: var(--strap-fg); font: 700 clamp(22px, 2.6vw, 28px)/1.1 var(--display); padding: 8px 14px; letter-spacing: .02em }
+.strap span { background: var(--tag); color: var(--tag-fg); font: 700 15px/1 var(--display); padding: 0 10px; display: flex; align-items: center; letter-spacing: .04em; white-space: nowrap }
+
+.problem { margin: 0; font-size: 18px; font-weight: 500; max-width: 60ch }
+.does { margin: 0; color: var(--muted); max-width: 62ch }
+.ba { display: grid; grid-template-columns: auto auto 1fr; gap: 6px 10px; align-items: baseline; font-size: 14px; margin: 0 }
+.ba dt { font: 500 11px/1.4 var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--muted) }
+.ba dd { margin: 0 }
+.ba .arrow { color: var(--accent); font-weight: 600 }
+.ba code { font: 500 13px var(--mono); background: var(--surface); border: 1px solid var(--line); padding: 1px 6px; border-radius: 4px }
+
+.pts { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; max-width: 62ch }
+.pts li { display: grid; grid-template-columns: 7.5rem minmax(0,1fr); gap: 12px; font-size: 15px; line-height: 1.45; padding: 4px 10px; border-left: 3px solid transparent; border-radius: 0 6px 6px 0 }
+.pts li b { font: 600 11px/1.9 var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--accent) }
+.pts li.ai { background: var(--warn-bg); border-left-color: var(--warn-line); padding-block: 7px }
+.pts li.ai b { color: var(--warn-ink) }
+.pts { gap: 4px }
+.pts code { font: 500 13px var(--mono); background: var(--surface); border: 1px solid var(--line); padding: 1px 6px; border-radius: 4px }
+.more { font-size: 14.5px; color: var(--muted); max-width: 62ch }
+.more summary { cursor: pointer; color: var(--warn-ink); font-weight: 600; width: fit-content }
+.more p { margin: 8px 0 0 }
+.meta { display: flex; flex-wrap: wrap; gap: 6px 16px; font: 500 12.5px/1.5 var(--mono); color: var(--muted); font-variant-numeric: tabular-nums }
+.caught { margin: 0; background: var(--warn-bg); border-left: 3px solid var(--warn-line); padding: 10px 14px; font-size: 14.5px; border-radius: 0 6px 6px 0 }
+.caught b { display: block; font: 600 11px/1.6 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted) }
+.actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center }
+.btn { display: inline-block; background: var(--accent); color: var(--accent-fg); text-decoration: none; font-weight: 600; font-size: 15px; padding: 10px 16px; border-radius: 6px }
+.btn:hover { filter: brightness(1.08) }
+.quiet { font-size: 14px; color: var(--muted) }
+
+/* how I work */
+.flow { list-style: none; margin: 0 0 30px; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 12px; counter-reset: s }
+.flow-note { margin: -4px 0 14px; font-size: 14px; color: var(--muted) }
+.flow li { position: relative; display: grid; gap: 4px; align-content: start; background: var(--surface); border: 1px solid var(--line); border-top: 3px solid var(--accent); border-radius: 6px; padding: 12px 14px 14px }
+.flow li .n { font: 700 26px/1 var(--display); color: var(--accent) }
+.flow li b { font: 700 19px/1.1 var(--display); text-transform: uppercase; letter-spacing: .02em }
+.flow li .d { font-size: 14px; color: var(--muted); line-height: 1.4 }
+.flow li:nth-child(n+5) { border-top-color: var(--tag) }
+.flow li:nth-child(n+5) .n { color: var(--tag-ink) }
+.me { background: var(--strap); color: var(--strap-fg); border-radius: 8px; padding: 24px; display: grid; gap: 20px; margin-bottom: 18px }
+.me h3 { margin: 0; font: 700 30px/1 var(--display); text-transform: uppercase; letter-spacing: .02em }
+.me-head p { margin: 8px 0 0; font-size: 16px; opacity: .85; max-width: 60ch }
+.stats { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 12px }
+.stats li { min-width: 0; overflow-wrap: anywhere; display: grid; gap: 6px; align-content: start; background: rgba(255,255,255,.06); border-left: 3px solid var(--tag); border-radius: 0 6px 6px 0; padding: 12px 14px }
+.stats b { font: 700 34px/1 var(--display); color: var(--tag); overflow-wrap: normal }
+.stats span { font-size: 14px; opacity: .85; line-height: 1.35 }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; align-items: center }
+.chips span { border: 1px solid rgba(255,255,255,.25); border-radius: 999px; padding: 3px 11px; font-size: 13px }
+.chip-rows { display: grid; gap: 10px }
+.chips .lab { border: 0; padding: 0; width: 92px; flex: none; font: 600 11px var(--mono); letter-spacing: .08em; text-transform: uppercase; opacity: .7 }
+.how { list-style: none; margin: 0; padding: 0 0 12px; display: grid; gap: 8px; font-size: 16px }
+.how b { font-weight: 600 }
+.about { max-width: 70ch; color: var(--muted); padding-block: 4px 12px }
+.contact { list-style: none; margin: 0; padding: 0 0 18px; display: grid; gap: 8px; font-size: 16px; max-width: 620px }
+.contact li { display: flex; align-items: center; gap: 4px 14px; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px 8px 14px; min-height: 54px }
+.contact .val { display: flex; align-items: center; gap: 10px; min-width: 0; flex: 1; justify-content: space-between }
+.contact .sel, .contact a { overflow-wrap: anywhere }
+.contact .copy { width: 34px; height: 34px; flex: none }
+.contact .copy svg { width: 16px; height: 16px }
+.contact li > span:first-child { font: 500 12px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); width: 80px }
+.contact .sel { user-select: all; font-weight: 500 }
+footer { border-top: 1px solid var(--line); padding-block: 22px 40px; font-size: 13px; color: var(--muted) }
+
+@media (max-width: 520px) { .stats b { font-size: 27px } .stats li { padding: 10px 11px } .contact li { flex-direction: column; align-items: stretch; gap: 2px; padding-block: 8px } .chips .lab { width: 100% } .group > h2 { font-size: 22px } .group > h2::before { height: 22px } .pts li { grid-template-columns: minmax(0,1fr); gap: 2px } .flow { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 8px } .flow li { padding: 10px 12px; grid-template-columns: auto 1fr; align-items: baseline; column-gap: 8px } .flow li .n { font-size: 20px } .flow li b { font-size: 16px } .flow li .d { display: none } }
+@media (max-width: 820px) {
+  .flow { grid-template-columns: repeat(2, minmax(0,1fr)) }
+  .stats { grid-template-columns: repeat(2, minmax(0,1fr)) }
+  .proj { grid-template-columns: minmax(0, 1fr); gap: 18px }
+  .bar nav .links { display: none }
+  /* phones: one-line jump menu, and each project folded to title + problem until tapped */
+  .menu-btn { display: inline-grid }
+  .facts { grid-template-columns: repeat(2, minmax(0,1fr)) }
+  /* phones: title, video, one line, buttons. Everything else behind "Details" */
+  .proj { gap: 12px; padding-block: 14px 26px }
+  .proj .story { display: contents }
+  .proj .strap { order: 1 } .proj .media { order: 2 } .proj .oneliner { order: 3 } .proj .actions { order: 4 }
+  .proj .problem { order: 5 } .proj .pts { order: 6 } .proj .more { order: 7 } .proj .story > .quiet { order: 8 }
+  .proj.folded .problem, .proj.folded .pts, .proj.folded .more, .proj.folded .quiet { display: none }
+  .proj.folded .oneliner { display: block }
+  .toggle { display: inline-flex }
+}
+@media (max-width: 360px) { .bar nav { gap: 8px; flex-wrap: nowrap } .bar .name { font-size: 18px; gap: 8px } .mark { width: 24px; height: 24px } .bar .jump a { padding-inline: 12px; gap: 8px; grid-template-columns: 24px 1fr auto 14px } .stats b { font-size: 28px } .me { padding: 18px } .strap { flex-wrap: wrap } .strap span { padding-block: 4px } }
+@media (min-width: 1800px) {
+  .wrap { max-width: 1400px }
+  body { font-size: 17px }
+  .problem { font-size: 19px }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important } }
+
+/* sticky top bar */
+.bar { position: sticky; top: 0; z-index: 40; padding-block: 14px; border-bottom: 1px solid transparent; transition: border-color .2s }
+.bar.stuck { border-bottom-color: var(--line) }
+.group, .proj { scroll-margin-top: 84px }
+
+/* two parts: business and sports */
+.bar nav .links { align-items: center }
+.dd { position: relative; display: inline-flex }
+.dd > button { all: unset; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; color: var(--muted); font-size: 14px }
+.dd > button:hover, .dd > button[aria-expanded="true"] { color: var(--fg) }
+.dd > button:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px }
+.caret { width: 12px; height: 12px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; transition: transform .15s }
+.dd > button[aria-expanded="true"] .caret { transform: rotate(180deg) }
+.dd-menu { position: absolute; top: calc(100% + 12px); left: -14px; min-width: 230px; display: grid; background: var(--surface); border: 1px solid var(--line); border-top: 3px solid var(--tag); border-radius: 4px 4px 10px 10px; padding: 6px 0; box-shadow: 0 18px 40px rgba(0,0,0,.25); z-index: 30 }
+.dd-menu[hidden] { display: none }
+.bar nav .dd-menu a { display: flex; justify-content: space-between; gap: 16px; padding: 10px 14px; color: var(--fg); font-weight: 500 }
+.bar nav .dd-menu a:hover { background: var(--bg) }
+.dd-menu a .c, .jump .sub .c { font: 500 11px/1.4 var(--mono); color: var(--muted); text-transform: uppercase; letter-spacing: .06em }
+.dd-menu .all { border-bottom: 1px solid var(--line); margin-bottom: 4px }
+.bar .jump .sub { padding-left: 56px; font-weight: 500; font-size: 14px; color: var(--muted) }
+.bar .jump .sub + .sub { border-top: 0 }
+
+.doors { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; margin: 6px 0 4px }
+.door { display: grid; gap: 6px; align-content: start; text-decoration: none; color: var(--fg); background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: 6px; padding: 16px 18px; transition: border-color .15s, transform .15s }
+.door + .door { border-left-color: var(--tag) }
+.door:hover { border-color: var(--accent); transform: translateY(-1px) }
+.door + .door:hover { border-color: var(--tag) }
+.door .t { font: 700 24px/1.05 var(--display); text-transform: uppercase; letter-spacing: .02em }
+.door .d { font-size: 14.5px; color: var(--muted); line-height: 1.4 }
+.door .go2 { font: 600 13px/1 var(--body); color: var(--accent); margin-top: 6px }
+.door + .door .go2 { color: var(--tag-ink) }
+.door .n { font: 500 11px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted) }
+
+.part { scroll-margin-top: 76px; padding-top: 34px }
+.part-head { display: grid; gap: 8px; padding: 22px 24px; border-radius: 8px; background: var(--strap); color: var(--strap-fg); margin-bottom: 4px }
+.part-head .n { font: 500 12px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--tag) }
+.part-head h2 { margin: 0; font: 700 clamp(30px, 3.6vw, 42px)/1 var(--display); text-transform: uppercase; letter-spacing: .02em }
+.part-head p { margin: 0; max-width: 68ch; opacity: .85 }
+.part-head .subnav { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px }
+.part-head .subnav a { color: var(--strap-fg); text-decoration: none; border: 1px solid rgba(255,255,255,.28); border-radius: 999px; padding: 4px 12px; font-size: 13.5px }
+.part-head .subnav a:hover { border-color: var(--tag); color: var(--tag) }
+.part .group:first-of-type { border-top: 0 }
+@media (max-width: 820px) { .doors { grid-template-columns: minmax(0,1fr) } .part-head { padding: 18px } }
+</style>
+</head>
+<body>
+
+<div class="wrap" id="top">
+  <header class="bar">
+    <a class="name" href="#top" aria-label="Jānis Saulītis, back to top"><svg class="mark" viewBox="0 0 32 32" aria-hidden="true"><path class="rays" d="M16 3v4M5.4 7.9l2.8 2.8M26.6 7.9l-2.8 2.8M1.5 18.5h4M26.5 18.5h4"/><path class="disc" d="M7.5 22.5a8.5 8.5 0 0 1 17 0z"/><path class="ground" d="M2.5 26.5h27"/></svg><span>Jānis Saulītis</span></a>
+    <nav>
+      <span class="links"><span class="dd"><button type="button" aria-expanded="false" aria-controls="dd-business">Business<svg class="caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5"/></svg></button><span class="dd-menu" id="dd-business" hidden><a class="all" href="#business">All business tools <span class="c">6 tools</span></a><a href="#ai-plan">Where AI pays <span class="c">2 tools</span></a><a href="#back-office">Back office <span class="c">2 tools</span></a><a href="#lending">Lending <span class="c">2 tools</span></a></span></span><span class="dd"><button type="button" aria-expanded="false" aria-controls="dd-sports">Sports<svg class="caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5"/></svg></button><span class="dd-menu" id="dd-sports" hidden><a class="all" href="#sports">All sports tools <span class="c">6 tools</span></a><a href="#sales">Sales <span class="c">1 tool</span></a><a href="#planning">Planning the day <span class="c">3 tools</span></a><a href="#data">Data &amp; graphics <span class="c">2 tools</span></a></span></span><a href="#other">Web design</a><a href="#how">How I work</a><a href="#contact">Contact</a></span>
+      <button class="icon-btn" id="theme" type="button" aria-label="Switch to dark mode"><svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg><svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/></svg></button>
+      <button class="icon-btn menu-btn" id="menu" type="button" aria-label="Sections" aria-expanded="false" aria-controls="jump"><svg class="i-bars" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="i-x" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    </nav>
+    <nav class="jump" id="jump" aria-label="Sections" hidden><a href="#business"><span class="n">01</span><span>For any business</span><span class="c">6 tools</span><svg class="go" viewBox="0 0 14 14" aria-hidden="true"><path d="M5 2.5 9.5 7 5 11.5"/></svg></a><a class="sub" href="#ai-plan"><span></span><span>Where AI pays</span><span class="c">2 tools</span><svg class="go" viewBox="0 0 14 14" aria-hidden="true"><path d="M5 2.5 9.5 7 5 11.5"/></svg></a><a class="sub" href="#back-office"><span></span><span>Back office</span><span class="c">2 tools</span><svg class="go" viewBox="0 0 14 14" aria-hidden="true"><path d="M5 2.5 9.5 7 5 11.5"/></svg></a><a class="sub" href="#lending"><span></span><span>Lending</span><span class="c">2 tools</span><svg class="go" viewBox="0 0 14 14" aria-hidden="true"><path d="M5 2.5 9.5 7 5 11.5"/></svg></a><a href="#sports"><span class="n">02</span><span>For live sports production</span><span class="c">6 tools</span><svg class="go" viewBox="0 0 14 14" aria-hidden="true"><path d="M5 2.5 9.5 7 5 11.5"/></svg></a><a class="sub" href="#sales"><span></span><span>Sales</span><span class="c">1 tool</span><svg class="go" viewBox="0 0 14 14" aria-hidden="true"><path d="M5 2.5 9.5 7 5 11.5"/></svg></a><a class="sub" href="#planning"><span></span><span>Planning the day</span><span class="c">3 tools</span><svg class="go" viewBox="0 0 14 14" aria-hidden="true"><path d="M5 2.5 9.5 7 5 11.5"/></svg></a><a class="sub" href="#data"><span></span><span>Data &amp; graphics</span><span class="c">2 tools</span><svg class="go" viewBox="0 0 14 14" aria-hidden="true"><path d="M5 2.5 9.5 7 5 11.5"/></svg></a><a href="#other"><span class="n">03</span><span>Web design</span><span class="c">concept</span><svg class="go" viewBox="0 0 14 14" aria-hidden="true"><path d="M5 2.5 9.5 7 5 11.5"/></svg></a><a href="#how"><span class="n">04</span><span>How I work</span><span class="c">8 steps</span><svg class="go" viewBox="0 0 14 14" aria-hidden="true"><path d="M5 2.5 9.5 7 5 11.5"/></svg></a><a href="#contact"><span class="n">05</span><span>Contact</span><span class="c"></span><svg class="go" viewBox="0 0 14 14" aria-hidden="true"><path d="M5 2.5 9.5 7 5 11.5"/></svg></a></nav>
+  </header>
+
+  <section class="intro">
+    <div class="kicker">Portfolio · Riga · November 2026</div>
+    <h1>Working AI tools for everyday business, from the back office to lending</h1>
+    <ul class="facts">
+      <li><b>12</b><span>working tools, each with a demo video</span></li>
+      <li><b>11</b><span>live to try, free</span></li>
+      <li><b>6</b><span>different AI builders</span></li>
+      <li><b>50+</b><span>AI mistakes caught in testing</span></li>
+    </ul>
+    <div class="doors"><a class="door" href="#business"><span class="n">6 tools</span><span class="t">For any business</span><span class="d">Books, customer emails, loan checks, AI costs</span><span class="go2">See them ↓</span></a><a class="door" href="#sports"><span class="n">6 tools</span><span class="t">For live sports production</span><span class="d">Quotes, crew plans, finish times, captions, reports</span><span class="go2">See them ↓</span></a></div>
+    <p class="note">All companies, people, tournaments and figures in the demos are invented.</p>
+  </section>
+
+  <section class="part" id="business">
+    <div class="part-head"><span class="n">Part 1 · 6 tools</span><h2>For any business</h2><p>Office work that eats the week: books, customer emails, document checks, risk calls, and where AI is worth it in the first place.</p><nav class="subnav" aria-label="Business groups"><a href="#ai-plan">Where AI pays</a><a href="#back-office">Back office</a><a href="#lending">Lending</a></nav></div>
+  <!-- ===================== WHERE AI PAYS ===================== -->
+  <section class="group" id="ai-plan">
+    <h2>Where AI pays <small>2 tools</small></h2>
+
+    <article class="proj" id="finder">
+      <div class="media"><video controls preload="none" playsinline poster="../media/finder.jpg" src="../media/finder.mp4" aria-label="Demo video: Where AI Pays"></video></div>
+      <div class="story">
+        <div class="strap"><h3>Where AI Pays</h3><span>Claude Code</span></div>
+        <p class="problem">A manager knows AI could help, but not which project pays back first.</p>
+        <ul class="pts">
+          <li><b>Does</b><span>Ranks AI projects by what they save after running costs, and shows the maths</span></li>
+          <li><b>Result</b><span><code>€695</code> a month and 24 staff hours freed for a sample lender. The top idea pays back in 12 months</span></li>
+          <li class="ai"><b>Checked</b><span>Every estimate shows its own formula, so each number can be checked by hand</span></li>
+          <li><b>Safeguard</b><span>Each idea carries a risk label, and a plain warning where personal data is involved</span></li>
+          <li><b>Tools used</b><span>Claude Code, Python, Streamlit</span></li>
+        </ul>
+        <details class="more"><summary>Read more</summary><p>Pick an industry and what takes the team the most time, then roughly how much of it there is. It ranks the AI projects worth starting with: what each saves, what it costs to run, how long it takes to pay back, and the risk. Each idea opens to the first three steps and the maths behind the number, and the whole plan downloads as a one-page PDF.</p></details>
+        <div class="actions"><a class="btn" href="https://ai-opportunity-finder.streamlit.app/" target="_blank" rel="noopener">Try it live →</a><span class="quiet">May take 30 s to wake up</span></div>
+      </div>
+    </article>
+
+    <article class="proj" id="cost">
+      <div class="media"><video controls preload="none" playsinline poster="../media/cost.jpg" src="../media/cost.mp4" aria-label="Demo video: AI Cost Check"></video></div>
+      <div class="story">
+        <div class="strap"><h3>AI Cost Check</h3><span>Claude Code</span></div>
+        <p class="problem">AI prices are quoted per million tokens. A manager needs a monthly figure in euros.</p>
+        <ul class="pts">
+          <li><b>Does</b><span>Prices one AI task on nine current models, and counts the people who check its work</span></li>
+          <li><b>Result</b><span>Sorting 2,000 emails a month: the AI costs <code>€0.47</code>, you keep about <code>€670</code></span></li>
+          <li class="ai"><b>Checked</b><span>Model prices checked 13 Nov 2026, and every cost line is shown</span></li>
+          <li><b>Finding</b><span>The choice of model matters far less than how much checking the work needs</span></li>
+          <li><b>Tools used</b><span>Claude Code, Python, Streamlit</span></li>
+        </ul>
+        <details class="more"><summary>Read more</summary><p>Describe the task: what the AI should do, how many a month, how long a person takes today and what an hour costs. It shows what you keep each month, where the freed staff time goes (people checking, hosting, the AI itself), when setup pays back, and the same work priced on nine current models.</p></details>
+        <div class="actions"><a class="btn" href="https://ai-cost-check.streamlit.app/" target="_blank" rel="noopener">Try it live →</a><span class="quiet">May take 30 s to wake up</span></div>
+      </div>
+    </article>
+  </section>
+
+  <!-- ===================== BACK OFFICE ===================== -->
+  <section class="group" id="back-office">
+    <h2>Back office <small>2 tools</small></h2>
+
+    <article class="proj" id="books">
+      <div class="media"><video controls preload="none" playsinline poster="../media/books.jpg" src="../media/books.mp4" aria-label="Demo video: Auto Books"></video></div>
+      <div class="story">
+        <div class="strap"><h3>Auto Books</h3><span>Claude Code</span></div>
+        <p class="problem">Every month someone sorts the bank export by hand for the accountant.</p>
+        <ul class="pts">
+          <li><b>Does</b><span>Sorts each transaction into a category and learns from every correction</span></li>
+          <li><b>Result</b><span>October: <code>63 of 67</code> sorted on its own. The 4 it isn't sure about go to a person</span></li>
+          <li class="ai"><b>Tested</b><span>On 3 months it never saw: 86% sorted alone in month 1, 94% by month 3, 0 sorted wrongly</span></li>
+          <li><b>Safeguard</b><span>Below 70% sure it asks instead of guessing. No AI service, so nothing leaves the app</span></li>
+          <li><b>Tools used</b><span>Claude Code, Python (scikit-learn), Streamlit</span></li>
+        </ul>
+        <details class="more"><summary>Read more</summary><p>Upload a month's bank export (or use the sample company). It sorts every payment into a category, totals money in, business costs and a rough VAT figure, and leaves anything it isn't sure about for a person. Confirm those, and next month the same suppliers are sorted automatically. The data is an invented year for a small Latvian company, written the way bank exports look.</p></details>
+        <div class="actions"><a class="btn" href="https://bookkeeping-sorter.streamlit.app/" target="_blank" rel="noopener">Try it live →</a><span class="quiet">May take 30 s to wake up</span></div>
+      </div>
+    </article>
+
+    <article class="proj" id="inbox">
+      <div class="media"><video controls preload="none" playsinline poster="../media/inbox.jpg" src="../media/inbox.mp4" aria-label="Demo video: Inbox Router"></video></div>
+      <div class="story">
+        <div class="strap"><h3>Inbox Router</h3><span>Claude Code + Gemini</span></div>
+        <p class="problem">Customer emails arrive in six languages, and the urgent or risky ones wait in the queue.</p>
+        <ul class="pts">
+          <li><b>Does</b><span>Sorts each email by topic and urgency, routes it, and drafts a reply in the customer's language</span></li>
+          <li><b>Result</b><span>Fraud, hardship, complaints and data requests always go to a person. Routine ones get a draft</span></li>
+          <li class="ai"><b>Tested</b><span>96 emails with known answers: <code>95</code> sorted exactly right, 0 risky emails missed</span></li>
+          <li class="ai"><b>AI mistakes</b><span>Rated a scam-call email as medium urgency, not high. It still went to a person, and the miss is shown on the test page</span></li>
+          <li><b>Tools used</b><span>Claude Code, Google Gemini, Python, Streamlit</span></li>
+        </ul>
+        <details class="more"><summary>Read more</summary><p>The AI reads each email and suggests the topic, urgency, a short summary and a draft reply. Fixed business rules then decide the team, and force a person to review fraud, hardship, complaints, data requests or anything the AI is unsure about. The 96-email test covers 16 emails per language, including tricky ones: two problems in one email, sarcasm, missing diacritics, and a customer who paid a scammer.</p></details>
+        <div class="actions"><a class="btn" href="https://ai-inbox-triage.streamlit.app/" target="_blank" rel="noopener">Try it live →</a><span class="quiet">May take 30 s to wake up</span></div>
+      </div>
+    </article>
+  </section>
+
+  <!-- ===================== LENDING ===================== -->
+  <section class="group" id="lending">
+    <h2>Lending <small>2 tools</small></h2>
+
+    <article class="proj" id="early">
+      <div class="media"><video controls preload="none" playsinline poster="../media/early.jpg" src="../media/early.mp4" aria-label="Demo video: Early Call"></video></div>
+      <div class="story">
+        <div class="strap"><h3>Early Call</h3><span>Claude Code</span></div>
+        <p class="problem">Collections calls customers once they're already late.</p>
+        <ul class="pts">
+          <li><b>Does</b><span>Scores new loans for the risk of going 30+ days late, with the reasons in plain words</span></li>
+          <li><b>Result</b><span><code>40%</code> of the loans on its call list really went late, against 15% at random</span></li>
+          <li class="ai"><b>Tested</b><span>Trained on months 1–18, tested on 6 months it never saw. A black-box model did no better, so the explainable one is kept</span></li>
+          <li><b>Safeguard</b><span>Doesn't use gender, age, nationality or family status. Built for who to call early, not for refusing credit</span></li>
+          <li><b>Tools used</b><span>Claude Code, Python (scikit-learn), Streamlit</span></li>
+        </ul>
+        <details class="more"><summary>Read more</summary><p>Each month's new loans get a risk score, and the riskiest go on a call list with the reasons behind every score. Try an application and watch the risk and reasons move, set your own costs to see what calling early is worth (about €2,218 a month with the sample numbers), and check how it behaves market by market. 6,472 invented loans over 24 months in 6 markets.</p></details>
+        <div class="actions"><a class="btn" href="https://loan-risk-model.streamlit.app/" target="_blank" rel="noopener">Try it live →</a><span class="quiet">May take 30 s to wake up</span></div>
+      </div>
+    </article>
+
+    <article class="proj" id="doc">
+      <div class="media"><video controls preload="none" playsinline poster="../media/doc.jpg" src="../media/doc.mp4" aria-label="Demo video: Statement Check"></video></div>
+      <div class="story">
+        <div class="strap"><h3>Statement Check</h3><span>Claude Code + Gemini</span></div>
+        <p class="problem">Underwriters read every bank statement by hand to check the income an applicant stated.</p>
+        <ul class="pts">
+          <li><b>Does</b><span>Reads a bank statement and checks it against the loan application</span></li>
+          <li><b>Result</b><span>Stated <code>6,500 PLN</code>, salary about 4,200: flagged before anyone approves the loan</span></li>
+          <li class="ai"><b>Tested</b><span>12 tricky statements in 5 languages: 12 of 12 got the right verdict and the right reasons</span></li>
+          <li><b>Safeguard</b><span>The AI only reads the statement. Fixed rules make every check, and a person decides</span></li>
+          <li><b>Tools used</b><span>Claude Code, Google Gemini, Python, Streamlit</span></li>
+        </ul>
+        <details class="more"><summary>Read more</summary><p>Gemini reads the statement (any language, any bank layout). Fixed rules then check the name, how recent it is, the income against what was stated, whether income is still coming in, undeclared loans, regular gambling and bounced payments, and list every check with the lines that support it. The test set includes the cases that catch people out: salary paid in two parts, a one-off bonus, irregular self-employed income, a similar but different name.</p></details>
+        <div class="actions"><a class="btn" href="https://loan-doc-checker.streamlit.app/" target="_blank" rel="noopener">Try it live →</a><span class="quiet">May take 30 s to wake up</span></div>
+      </div>
+    </article>
+  </section>
+  </section>
+
+  <section class="part" id="sports">
+    <div class="part-head"><span class="n">Part 2 · 6 tools</span><h2>For live sports production</h2><p>Built for the people who put tennis and basketball on screen: quotes, crew plans, finish times, captions and client reports.</p><nav class="subnav" aria-label="Sports groups"><a href="#sales">Sales</a><a href="#planning">Planning the day</a><a href="#data">Data &amp; graphics</a></nav></div>
+  <!-- ===================== SALES ===================== -->
+  <section class="group" id="sales">
+    <h2>Sales <small>1 tool</small></h2>
+    <article class="proj" id="quote">
+      <div class="media"><video controls preload="none" playsinline poster="../media/quote.jpg" src="../media/quote.mp4" aria-label="Demo video: live production quote calculator"></video></div>
+      <div class="story">
+        <div class="strap"><h3>Live production quote calculator</h3><span>v0</span></div>
+        <p class="problem">A league asks what a season of live production costs. Answering takes a call and a spreadsheet.</p>
+        <ul class="pts">
+          <li><b>Does</b><span>Pick what you need and see the season price instantly</span></li>
+          <li><b>Result</b><span><code>€ 70,627.70</code> for 20 matches, and a one-page quote to sign</span></li>
+          <li class="ai"><b>AI mistakes</b><span>AI said remote saves €30,008. Real answer: €38,720. Caught by checking every number by hand</span></li>
+          <li><b>Tools used</b><span>v0 (Vercel)</span></li>
+          <li><b>Bugs fixed</b><span>5 found in testing and fixed</span></li>
+        </ul>
+        <details class="more"><summary>Read more</summary><p>Pick a package, the number of matches and the add-ons, and see the season price with volume discount and VAT, what remote production would save, and a one-page quote ready to sign.</p><p><b>The AI mistake in full:</b> It said remote production would save €30,008. Against the quote on screen the real saving was €38,720: the €900-per-match travel cost was left out of both sides. Caught by recalculating every test case by hand.</p></details>
+        <div class="actions"><a class="btn" href="https://live-production-quote-calculator.vercel.app/" target="_blank" rel="noopener">Try it live →</a></div>
+      </div>
+    </article>
+  </section>
+
+  <!-- ===================== PLANNING ===================== -->
+  <section class="group" id="planning">
+    <h2>Planning the day <small>3 tools</small></h2>
+
+    <article class="proj" id="watcher">
+      <div class="media"><video controls preload="none" playsinline poster="../media/watcher.jpg" src="../media/watcher.mp4" aria-label="Demo video: schedule-change watcher"></video></div>
+      <div class="story">
+        <div class="strap"><h3>Schedule-change alerts</h3><span>n8n + AI</span></div>
+        <p class="problem">A match moves, and nobody tells camera 2.</p>
+        <ul class="pts">
+          <li><b>Does</b><span>Watches the match schedule and messages the crew when a time changes</span></li>
+          <li><b>Result</b><span>A Telegram message: who is affected and who can cover</span></li>
+          <li class="ai"><b>AI mistakes</b><span>Said the next match starts at 16:25. It couldn't start before 18:05. Now the code checks every time</span></li>
+          <li><b>Tools used</b><span>n8n, OpenAI, Google Sheets, Telegram</span></li>
+          <li><b>Bugs fixed</b><span>7 found in testing and fixed</span></li>
+        </ul>
+        <details class="more"><summary>Read more</summary><p>An AI agent checks the order of play every 15 minutes. When something changes, it works out the knock-on delays and crew clashes and sends a Telegram alert saying who is affected and who can cover.</p><p><b>The AI mistake in full:</b> An alert said the next match would start around 16:25. It couldn't start before 18:05: delays weren't being carried down the court. Caught by reading the alert as a production manager would, and fixed in the code, so the AI only writes the message and never decides the facts.</p></details>
+        <div class="actions"><span class="quiet">Runs in a private n8n account, so the video is the demo.</span></div>
+      </div>
+    </article>
+
+    <article class="proj" id="finish">
+      <div class="media"><video controls preload="none" playsinline poster="../media/finish.jpg" src="../media/finish.mp4" aria-label="Demo video: court finish-time predictor"></video></div>
+      <div class="story">
+        <div class="strap"><h3>When will the court finish?</h3><span>Replit</span></div>
+        <p class="problem">Tennis has no fixed end time, so crews and broadcasts plan blind.</p>
+        <ul class="pts">
+          <li><b>Does</b><span>Predicts when the last match on a court will end</span></li>
+          <li><b>Result</b><span><code>22:30</code> most likely, 21:40–23:31 range, 4 h crew overtime</span></li>
+          <li class="ai"><b>AI mistakes</b><span>First version mixed in qualifying and tour matches, so every forecast was off</span></li>
+          <li><b>Tools used</b><span>Replit, Python, Streamlit</span></li>
+          <li><b>Bugs fixed</b><span>7 found in testing and fixed</span></li>
+        </ul>
+        <details class="more"><summary>Read more</summary><p>Predicts when the last match on a court will finish, from 35,000 real ATP Challenger matches (2018–2024), and how much crew overtime that means. Change the plan and the answer updates.</p><p><b>The AI mistake in full:</b> The first version mixed in qualifying and tour-level matches, which run to different lengths, so every forecast was off. It now uses Challenger main-draw matches only and shows how many were removed and why.</p></details>
+        <div class="actions"><a class="btn" href="https://court-finish.streamlit.app/" target="_blank" rel="noopener">Try it live →</a><span class="quiet">May take 30 s to wake up</span></div>
+      </div>
+    </article>
+
+    <article class="proj" id="scheduler">
+      <div class="media"><video controls preload="none" playsinline poster="../media/scheduler-poster.jpg" src="../media/scheduler.mp4" aria-label="Demo video: crew and control-room scheduler"></video></div>
+      <div class="story">
+        <div class="strap"><h3>Crew &amp; control-room scheduler</h3><span>Lovable</span></div>
+        <p class="problem">Booking 20 people across four courts by hand: someone gets double-booked, or works past their shift without anyone noticing.</p>
+        <ul class="pts">
+          <li><b>Does</b><span>Drag people onto matches. Clashes show up straight away</span></li>
+          <li><b>Result</b><span>A match runs long: later matches move, new problems turn red</span></li>
+          <li class="ai"><b>AI mistakes</b><span>Same person shown as both "overtime" and "not available": payroll would have paid it</span></li>
+          <li><b>Tools used</b><span>Lovable</span></li>
+          <li><b>Bugs fixed</b><span>18 found in testing and fixed</span></li>
+        </ul>
+        <details class="more"><summary>Read more</summary><p>Drag crew onto matches or crew slots. It flags double-bookings, short rest breaks, missing roles and overtime. When a match runs long, everything after it moves and the new problems show in red.</p><p><b>The AI mistake in full:</b> One camera operator showed as both "5 min overtime" and "not available" on the same match. Payroll would have paid overtime for someone the app said shouldn't be there.</p></details>
+        <div class="actions"><a class="btn" href="https://court-crew-control.lovable.app/" target="_blank" rel="noopener">Try it live →</a></div>
+      </div>
+    </article>
+  </section>
+
+  <!-- ===================== DATA & GRAPHICS ===================== -->
+  <section class="group" id="data">
+    <h2>Data &amp; on-screen graphics <small>2 tools</small></h2>
+
+    <article class="proj" id="report">
+      <div class="media"><video controls preload="none" playsinline poster="../media/report.jpg" src="../media/report.mp4" aria-label="Demo video: tournament delivery report"></video></div>
+      <div class="story">
+        <div class="strap"><h3>Client report from messy logs</h3><span>Claude Code</span></div>
+        <p class="problem">After a tournament, the data sits in five files typed by different people.</p>
+        <ul class="pts">
+          <li><b>Does</b><span>Turns five messy log files into one checked client report</span></li>
+          <li><b>Result</b><span>A client PDF report plus a payroll and to-do file. Nothing guessed</span></li>
+          <li class="ai"><b>AI mistakes</b><span>A typo of 130 966 viewers would have shown as a record audience. Now held back</span></li>
+          <li><b>Tools used</b><span>Claude Code, Python, Streamlit</span></li>
+          <li><b>Bugs fixed</b><span>12 found in testing and fixed</span></li>
+        </ul>
+        <details class="more"><summary>Read more</summary><p>Checks every value, fixes obvious typos and lists them, holds back anything uncertain, and builds a PDF report for the client plus an internal file with crew overtime and a to-do list of data problems.</p><p><b>The AI mistake in full:</b> A viewer count typed with an extra digit (130 966) would have gone into the client report as a record audience. Anything far above the usual for that round is now held back to confirm.</p></details>
+        <div class="actions"><a class="btn" href="https://tournament-report.streamlit.app/" target="_blank" rel="noopener">Try it live →</a><span class="quiet">May take 30 s to wake up</span></div>
+      </div>
+    </article>
+
+    <article class="proj" id="captions">
+      <div class="media"><video controls preload="none" playsinline poster="../media/captions.jpg" src="../media/captions.mp4" aria-label="Demo video: caption name checker"></video></div>
+      <div class="story">
+        <div class="strap"><h3>Caption name checker</h3><span>Sheets + Python</span></div>
+        <p class="problem">Start lists arrive in every format, and a misspelled name on screen is embarrassing.</p>
+        <ul class="pts">
+          <li><b>Does</b><span>Fixes misspelled player names before they go on screen</span></li>
+          <li><b>Result</b><span><code>BERZINS Karlis</code> → <code>K. BĒRZIŅŠ</code> on the name strap</span></li>
+          <li class="ai"><b>AI mistakes</b><span>"VAN DER BERG Jan" became "J. Berg". Found by testing against the original on 30 names</span></li>
+          <li><b>Tools used</b><span>Google Sheets + Apps Script, then Claude Code + Streamlit</span></li>
+          <li><b>Bugs fixed</b><span>9 found in testing and fixed</span></li>
+        </ul>
+        <details class="more"><summary>Read more</summary><p>Cleans every name against the broadcaster's master list (Latvian letters, name order, capitals, duplicates), makes the on-screen caption, and explains each change. Anything uncertain is held back for a human.</p><p><b>The AI mistake in full:</b> "VAN DER BERG Jan" was captioned "J. Berg", dropping half the surname. Found while rebuilding it as a web app, by testing the new version against the original on 30 tricky names.</p></details>
+        <div class="actions"><a class="btn" href="https://caption-checker.streamlit.app/" target="_blank" rel="noopener">Try it live →</a><span class="quiet">May take 30 s to wake up</span></div>
+      </div>
+    </article>
+  </section>
+  </section>
+
+  <!-- ===================== OTHER WORK ===================== -->
+  <section class="group" id="other">
+    <h2>Other work: web design <small>concept</small></h2>
+    <article class="proj" id="staysharp">
+      <div class="media"><img src="../media/staysharp.jpg" alt="Concept redesign of the Stay Sharp LIVE landing page: headline, date, venue and a ticket-style price card"></div>
+      <div class="story">
+        <div class="strap"><h3>Stay Sharp LIVE event page</h3><span>Concept</span></div>
+        <p class="problem">My own take on the landing page for a one-day business event in Riga: how it could sell more tickets.</p>
+        <ul class="pts">
+          <li><b>First screen</b><span>One promise, date, place, price and one button</span></li>
+          <li><b>Built in</b><span>Programme, speakers, three ticket tiers, FAQ, in Latvian</span></li>
+          <li><b>AI-ready</b><span>Prices in plain text and structured data, so AI assistants can read them</span></li>
+        </ul>
+        <p class="quiet">A concept redesign, not the event's official website, and not affiliated with the organisers.</p>
+        <div class="actions"><a class="btn" href="https://stay-sharp-live-concept.netlify.app/" target="_blank" rel="noopener">See the concept →</a></div>
+      </div>
+    </article>
+  </section>
+
+  <!-- ===================== HOW I WORK ===================== -->
+  <section class="group" id="how">
+    <h2>How I work</h2>
+    <p class="flow-note">Steps 4 to 7 repeat until it holds up.</p>
+    <ol class="flow">
+      <li><span class="n">1</span><b>Spot the problem</b><span class="d">What slows the team down, every week</span></li>
+      <li><span class="n">2</span><b>Research</b><span class="d">How it's done now, what data exists</span></li>
+      <li><span class="n">3</span><b>Find a solution</b><span class="d">The simplest thing that would fix it</span></li>
+      <li><span class="n">4</span><b>Build a demo</b><span class="d">Pick the AI tool that fits, direct it</span></li>
+      <li><span class="n">5</span><b>Make it clear</b><span class="d">A first-time user gets it in seconds</span></li>
+      <li><span class="n">6</span><b>Check the work</b><span class="d">Every number recalculated by hand</span></li>
+      <li><span class="n">7</span><b>Try to break it</b><span class="d">Typos, wrong data, a first-time user</span></li>
+      <li><span class="n">8</span><b>Ship it</b><span class="d">Live link and a demo video</span></li>
+    </ol>
+    <div class="me">
+      <div class="me-head">
+        <h3>Jānis Saulītis</h3>
+        <p>I turn everyday problems into working tools by directing AI. Strong with data and numbers, and I check every one before it ships.</p>
+      </div>
+      <ul class="stats">
+        <li><b>1 yr</b><span>building with AI</span></li>
+        <li><b>5 yrs</b><span>independent crypto research</span></li>
+        <li><b>19 yrs</b><span>professional poker</span></li>
+        <li><b>Bachelor</b><span>Business Administration, BA School of Business and Finance, 2014</span></li>
+      </ul>
+      <div class="chip-rows">
+        <div class="chips"><span class="lab">Languages</span><span>Latvian</span><span>English</span><span>Russian</span></div>
+        <div class="chips"><span class="lab">Interests</span><span>Sports</span><span>NBA</span><span>UFC</span><span>Movies</span><span>Street food</span><span>Skiing</span></div>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="group" id="contact">
+    <h2>Contact</h2>
+    <ul class="contact">
+      <li><span>Email</span><span class="val"><span class="sel">janis.saulitis88@gmail.com</span><button type="button" class="copy icon-btn" data-copy="janis.saulitis88@gmail.com" aria-label="Copy"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"/></svg></button></span></li>
+      <li><span>Phone</span><span class="val"><span class="sel">+371 25 944 757</span><button type="button" class="copy icon-btn" data-copy="+37125944757" aria-label="Copy"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"/></svg></button></span></li>
+      <li><span>LinkedIn</span><span class="val"><a href="https://www.linkedin.com/in/janissaulitis/" target="_blank" rel="noopener">linkedin.com/in/janissaulitis</a></span></li>
+    </ul>
+  </section>
+
+  <footer>All companies, people, loans, tournaments, crew, prices and audience figures in these demos are invented. Built by directing AI tools: Claude Code, v0, Lovable, Replit, n8n with OpenAI, Google Apps Script, with Google Gemini inside two of the tools.</footer>
+</div>
+
+<script>
+(() => {
+  const root = document.documentElement, btn = document.getElementById("theme");
+  const isDark = () => root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+  const label = () => { const d = isDark(); root.classList.toggle("is-dark", d); btn.setAttribute("aria-label", d ? "Switch to light mode" : "Switch to dark mode"); };
+  try { const t = localStorage.getItem("theme"); if (t) root.dataset.theme = t; } catch (e) {}
+  label();
+  try { matchMedia("(prefers-color-scheme: dark)").addEventListener("change", label); } catch (e) {}
+  btn.addEventListener("click", () => {
+    root.dataset.theme = isDark() ? "light" : "dark";
+    try { localStorage.setItem("theme", root.dataset.theme); } catch (e) {}
+    label();
+  });
+  document.querySelectorAll(".copy").forEach(b => b.addEventListener("click", () => {
+    const icon = b.innerHTML;
+    const done = () => { b.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>'; b.style.color = "var(--accent)"; setTimeout(() => { b.innerHTML = icon; b.style.color = ""; }, 1500); };
+    try { navigator.clipboard.writeText(b.dataset.copy).then(done, () => {}); } catch (e) {}
+  }));
+  const menu = document.getElementById("menu"), jump = document.getElementById("jump");
+  const close = () => { jump.hidden = true; menu.setAttribute("aria-expanded", "false"); };
+  menu.addEventListener("click", e => { e.stopPropagation(); jump.hidden = !jump.hidden; menu.setAttribute("aria-expanded", String(!jump.hidden)); });
+  jump.addEventListener("click", e => { if (e.target.closest("a")) close(); });
+  document.addEventListener("click", e => { if (!jump.hidden && !e.target.closest("#jump")) close(); });
+  document.addEventListener("keydown", e => { if (e.key === "Escape") close(); });
+  // phones: fold each project to its title and problem; one tap opens it
+  const phone = matchMedia("(max-width: 820px)");
+  document.querySelectorAll(".proj").forEach(pr => {
+    const story = pr.querySelector(".story"), prob = story.querySelector(".problem");
+    const first = story.querySelector(".pts li:first-child"), does = first && first.querySelector("b").textContent === "Does" ? first.querySelector("span") : null;
+    const one = document.createElement("p"); one.className = "oneliner";
+    one.textContent = does ? does.textContent : prob.textContent; prob.before(one);
+    let actions = story.querySelector(".actions");
+    if (!actions) { actions = document.createElement("div"); actions.className = "actions"; story.append(actions); }
+    const t = document.createElement("button");
+    t.type = "button"; t.className = "toggle";
+    const set = open => { pr.classList.toggle("folded", !open); t.textContent = open ? "Hide details ▴" : "Details ▾"; t.setAttribute("aria-expanded", open); };
+    t.addEventListener("click", () => set(pr.classList.contains("folded")));
+    actions.append(t);
+    set(!phone.matches);
+    phone.addEventListener?.("change", e => set(!e.matches));
+  });
+  // only one video plays at a time
+  document.querySelectorAll("video").forEach(v => v.addEventListener("play", () =>
+    document.querySelectorAll("video").forEach(o => { if (o !== v) o.pause(); })));
+
+  const bar = document.querySelector(".bar");
+  const stick = () => bar.classList.toggle("stuck", scrollY > 8);
+  addEventListener("scroll", stick, { passive: true }); stick();
+  // top-bar dropdowns (Business / Sports)
+  const dds = [...document.querySelectorAll(".dd")];
+  const shut = except => dds.forEach(d => { if (d !== except) { d.querySelector("button").setAttribute("aria-expanded", "false"); d.querySelector(".dd-menu").hidden = true; } });
+  dds.forEach(d => {
+    const b = d.querySelector("button"), m = d.querySelector(".dd-menu");
+    b.addEventListener("click", e => { e.stopPropagation(); const open = m.hidden; shut(d); m.hidden = !open; b.setAttribute("aria-expanded", String(open)); });
+    m.addEventListener("click", e => { if (e.target.closest("a")) shut(); });
+  });
+  document.addEventListener("click", e => { if (!e.target.closest(".dd")) shut(); });
+  document.addEventListener("keydown", e => { if (e.key === "Escape") shut(); });
+})();
+</script>
+
+</body>
+</html>

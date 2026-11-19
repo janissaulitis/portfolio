@@ -1,0 +1,55 @@
+  <!-- ===================== PLANNING ===================== -->
+  <section class="group" id="planning">
+    <h2>Planning the day <small>3 tools</small></h2>
+
+    <article class="proj" id="watcher">
+      <div class="media"><video controls preload="none" playsinline poster="{M}media/watcher.jpg" src="{M}media/watcher.mp4" aria-label="Demo video: schedule-change watcher"></video></div>
+      <div class="story">
+        <div class="strap"><h3>Schedule-change alerts</h3><span>n8n + AI</span></div>
+        <p class="problem">A match moves, and nobody tells camera 2.</p>
+        <ul class="pts">
+          <li><b>Does</b><span>Watches the match schedule and messages the crew when a time changes</span></li>
+          <li><b>Result</b><span>A Telegram message: who is affected and who can cover</span></li>
+          <li class="ai"><b>AI mistakes</b><span>Said the next match starts at 16:25. It couldn't start before 18:05. Now the code checks every time</span></li>
+          <li><b>Tools used</b><span>n8n, OpenAI, Google Sheets, Telegram</span></li>
+          <li><b>Bugs fixed</b><span>7 found in testing and fixed</span></li>
+        </ul>
+        <details class="more"><summary>Read more</summary><p>An AI agent checks the order of play every 15 minutes. When something changes, it works out the knock-on delays and crew clashes and sends a Telegram alert saying who is affected and who can cover.</p><p><b>The AI mistake in full:</b> An alert said the next match would start around 16:25. It couldn't start before 18:05: delays weren't being carried down the court. Caught by reading the alert as a production manager would, and fixed in the code, so the AI only writes the message and never decides the facts.</p></details>
+        <div class="actions"><span class="quiet">Runs in a private n8n account, so the video is the demo.</span></div>
+      </div>
+    </article>
+
+    <article class="proj" id="finish">
+      <div class="media"><video controls preload="none" playsinline poster="{M}media/finish.jpg" src="{M}media/finish.mp4" aria-label="Demo video: court finish-time predictor"></video></div>
+      <div class="story">
+        <div class="strap"><h3>When will the court finish?</h3><span>Replit</span></div>
+        <p class="problem">Tennis has no fixed end time, so crews and broadcasts plan blind.</p>
+        <ul class="pts">
+          <li><b>Does</b><span>Predicts when the last match on a court will end</span></li>
+          <li><b>Result</b><span><code>22:30</code> most likely, 21:40–23:31 range, 4 h crew overtime</span></li>
+          <li class="ai"><b>AI mistakes</b><span>First version mixed in qualifying and tour matches, so every forecast was off</span></li>
+          <li><b>Tools used</b><span>Replit, Python, Streamlit</span></li>
+          <li><b>Bugs fixed</b><span>7 found in testing and fixed</span></li>
+        </ul>
+        <details class="more"><summary>Read more</summary><p>Predicts when the last match on a court will finish, from 35,000 real ATP Challenger matches (2018–2024), and how much crew overtime that means. Change the plan and the answer updates.</p><p><b>The AI mistake in full:</b> The first version mixed in qualifying and tour-level matches, which run to different lengths, so every forecast was off. It now uses Challenger main-draw matches only and shows how many were removed and why.</p></details>
+        <div class="actions"><a class="btn" href="https://court-finish.streamlit.app/" target="_blank" rel="noopener">Try it live →</a><span class="quiet">May take 30 s to wake up</span></div>
+      </div>
+    </article>
+
+    <article class="proj" id="scheduler">
+      <div class="media"><video controls preload="none" playsinline poster="{M}media/scheduler-poster.jpg" src="{M}media/scheduler.mp4" aria-label="Demo video: crew and control-room scheduler"></video></div>
+      <div class="story">
+        <div class="strap"><h3>Crew &amp; control-room scheduler</h3><span>Lovable</span></div>
+        <p class="problem">Booking 20 people across four courts by hand: someone gets double-booked, or works past their shift without anyone noticing.</p>
+        <ul class="pts">
+          <li><b>Does</b><span>Drag people onto matches. Clashes show up straight away</span></li>
+          <li><b>Result</b><span>A match runs long: later matches move, new problems turn red</span></li>
+          <li class="ai"><b>AI mistakes</b><span>Same person shown as both "overtime" and "not available": payroll would have paid it</span></li>
+          <li><b>Tools used</b><span>Lovable</span></li>
+          <li><b>Bugs fixed</b><span>18 found in testing and fixed</span></li>
+        </ul>
+        <details class="more"><summary>Read more</summary><p>Drag crew onto matches or crew slots. It flags double-bookings, short rest breaks, missing roles and overtime. When a match runs long, everything after it moves and the new problems show in red.</p><p><b>The AI mistake in full:</b> One camera operator showed as both "5 min overtime" and "not available" on the same match. Payroll would have paid overtime for someone the app said shouldn't be there.</p></details>
+        <div class="actions"><a class="btn" href="https://court-crew-control.lovable.app/" target="_blank" rel="noopener">Try it live →</a></div>
+      </div>
+    </article>
+  </section>

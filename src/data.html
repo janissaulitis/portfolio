@@ -1,0 +1,38 @@
+  <!-- ===================== DATA & GRAPHICS ===================== -->
+  <section class="group" id="data">
+    <h2>Data &amp; on-screen graphics <small>2 tools</small></h2>
+
+    <article class="proj" id="report">
+      <div class="media"><video controls preload="none" playsinline poster="{M}media/report.jpg" src="{M}media/report.mp4" aria-label="Demo video: tournament delivery report"></video></div>
+      <div class="story">
+        <div class="strap"><h3>Client report from messy logs</h3><span>Claude Code</span></div>
+        <p class="problem">After a tournament, the data sits in five files typed by different people.</p>
+        <ul class="pts">
+          <li><b>Does</b><span>Turns five messy log files into one checked client report</span></li>
+          <li><b>Result</b><span>A client PDF report plus a payroll and to-do file. Nothing guessed</span></li>
+          <li class="ai"><b>AI mistakes</b><span>A typo of 130 966 viewers would have shown as a record audience. Now held back</span></li>
+          <li><b>Tools used</b><span>Claude Code, Python, Streamlit</span></li>
+          <li><b>Bugs fixed</b><span>12 found in testing and fixed</span></li>
+        </ul>
+        <details class="more"><summary>Read more</summary><p>Checks every value, fixes obvious typos and lists them, holds back anything uncertain, and builds a PDF report for the client plus an internal file with crew overtime and a to-do list of data problems.</p><p><b>The AI mistake in full:</b> A viewer count typed with an extra digit (130 966) would have gone into the client report as a record audience. Anything far above the usual for that round is now held back to confirm.</p></details>
+        <div class="actions"><a class="btn" href="https://tournament-report.streamlit.app/" target="_blank" rel="noopener">Try it live →</a><span class="quiet">May take 30 s to wake up</span></div>
+      </div>
+    </article>
+
+    <article class="proj" id="captions">
+      <div class="media"><video controls preload="none" playsinline poster="{M}media/captions.jpg" src="{M}media/captions.mp4" aria-label="Demo video: caption name checker"></video></div>
+      <div class="story">
+        <div class="strap"><h3>Caption name checker</h3><span>Sheets + Python</span></div>
+        <p class="problem">Start lists arrive in every format, and a misspelled name on screen is embarrassing.</p>
+        <ul class="pts">
+          <li><b>Does</b><span>Fixes misspelled player names before they go on screen</span></li>
+          <li><b>Result</b><span><code>BERZINS Karlis</code> → <code>K. BĒRZIŅŠ</code> on the name strap</span></li>
+          <li class="ai"><b>AI mistakes</b><span>"VAN DER BERG Jan" became "J. Berg". Found by testing against the original on 30 names</span></li>
+          <li><b>Tools used</b><span>Google Sheets + Apps Script, then Claude Code + Streamlit</span></li>
+          <li><b>Bugs fixed</b><span>9 found in testing and fixed</span></li>
+        </ul>
+        <details class="more"><summary>Read more</summary><p>Cleans every name against the broadcaster's master list (Latvian letters, name order, capitals, duplicates), makes the on-screen caption, and explains each change. Anything uncertain is held back for a human.</p><p><b>The AI mistake in full:</b> "VAN DER BERG Jan" was captioned "J. Berg", dropping half the surname. Found while rebuilding it as a web app, by testing the new version against the original on 30 tricky names.</p></details>
+        <div class="actions"><a class="btn" href="https://caption-checker.streamlit.app/" target="_blank" rel="noopener">Try it live →</a><span class="quiet">May take 30 s to wake up</span></div>
+      </div>
+    </article>
+  </section>
