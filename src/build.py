@@ -193,11 +193,11 @@ def page(first):
 <meta property="og:url" content="{url}">
 <meta property="og:title" content="Jānis Saulītis · Working tools built by directing AI">
 <meta property="og:description" content="{intro["desc"]}">
-<meta property="og:image" content="{SITE}og.png">
+<meta property="og:image" content="{SITE}og-2.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="{SITE}og.png">
+<meta name="twitter:image" content="{SITE}og-2.png">
 <meta name="darkreader-lock">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
