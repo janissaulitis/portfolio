@@ -114,3 +114,25 @@
       </div>
     </article>
   </section>
+
+  <!-- ===================== SECURITY ===================== -->
+  <section class="group" id="security">
+    <h2>Security <small>1 tool</small></h2>
+
+    <article class="proj" id="alerts">
+      <div class="media"><video controls preload="none" playsinline poster="{M}media/alerts.jpg" src="{M}media/alerts.mp4" aria-label="Demo video: Alert Desk"></video></div>
+      <div class="story">
+        <div class="strap"><h3>Alert Desk</h3><span>Claude Code</span></div>
+        <p class="problem">A security analyst starts the day with dozens of alerts, a few phishing reports and devices that quietly stopped updating.</p>
+        <ul class="pts">
+          <li><b>Does</b><span>Decides each alert with a written playbook (close, investigate or escalate), checks reported emails, runs device health checks and writes the weekly customer report</span></li>
+          <li><b>Result</b><span>24 alerts by 09:55: <code>12</code> to escalate, 6 to investigate, 6 closed automatically, each with next steps and a hunting query</span></li>
+          <li class="ai"><b>Tested</b><span>40 alerts and 16 emails with answers written by hand first: 0 escalations missed, 0 phishing emails let through</span></li>
+          <li><b>Safeguard</b><span>Fixed, readable rules decide, not an AI. Containment is recommended, never carried out</span></li>
+          <li><b>Tools used</b><span>Claude Code, Python, Streamlit, KQL (Defender Advanced Hunting)</span></li>
+        </ul>
+        <details class="more"><summary>Read more</summary><p>A morning at a managed endpoint security desk for one invented customer, with Microsoft Defender-style alerts. Every alert gets a decision from a written playbook, the rule behind it, the next steps, an example service-level clock and the Advanced Hunting query to start with. The phishing check scores a pasted email (sender, authentication, links, attachments) and lists what to do. Device health flags unsupported Windows 10 PCs, inactive sensors, tamper protection off and rules left in audit mode. The weekly report is built from the same data, so its numbers always match.</p></details>
+        <div class="actions"><a class="btn" href="https://alert-desk.streamlit.app/" target="_blank" rel="noopener">Try it live →</a><span class="quiet">May take 30 s to wake up</span></div>
+      </div>
+    </article>
+  </section>

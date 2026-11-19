@@ -17,10 +17,10 @@ CARET = '<svg class="caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4
 
 PARTS = {
     "business": dict(
-        title="For any business", short="Business", count="6 tools",
-        lede="Office work that eats the week: books, customer emails, document checks, risk calls, and where AI is worth it in the first place.",
-        door="Books, customer emails, loan checks, AI costs",
-        groups=[("ai-plan", "Where AI pays", "2 tools"), ("back-office", "Back office", "2 tools"), ("lending", "Lending", "2 tools")],
+        title="For any business", short="Business", count="7 tools",
+        lede="Office work that eats the week: books, customer emails, document checks, risk calls, security alerts, and where AI is worth it in the first place.",
+        door="Books, customer emails, loan checks, security alerts, AI costs",
+        groups=[("ai-plan", "Where AI pays", "2 tools"), ("back-office", "Back office", "2 tools"), ("lending", "Lending", "2 tools"), ("security", "Security", "1 tool")],
         html=lambda: read("business.html")),
     "sports": dict(
         title="For live sports production", short="Sports", count="6 tools",
@@ -32,9 +32,9 @@ PARTS = {
 
 INTRO = {
     "sports": dict(h1="Working tools for live sports production and everyday business, built by directing AI",
-                   desc="Twelve working tools built by directing AI: six for live sports production (quotes, crew plans, finish times, captions, client reports) and six for any business (bookkeeping, customer emails, loan checks, AI costs). Each with a demo video and real test results."),
+                   desc="Thirteen working tools built by directing AI: six for live sports production (quotes, crew plans, finish times, captions, client reports) and seven for any business (bookkeeping, customer emails, loan checks, security alerts, AI costs). Each with a demo video and real test results."),
     "business": dict(h1="Working AI tools for everyday business, from the back office to lending",
-                     desc="Twelve working tools built by directing AI: six for any business (bookkeeping, customer emails, loan checks, risk calls, AI costs) and six for live sports production. Each with a demo video and real test results."),
+                     desc="Thirteen working tools built by directing AI: seven for any business (bookkeeping, customer emails, loan checks, risk calls, security alerts, AI costs) and six for live sports production. Each with a demo video and real test results."),
 }
 
 EXTRA_CSS = """
@@ -162,8 +162,8 @@ def page(first):
     <div class="kicker">Portfolio · Riga · November 2026</div>
     <h1>{intro["h1"]}</h1>
     <ul class="facts">
-      <li><b>12</b><span>working tools, each with a demo video</span></li>
-      <li><b>11</b><span>live to try, free</span></li>
+      <li><b>13</b><span>working tools, each with a demo video</span></li>
+      <li><b>12</b><span>live to try, free</span></li>
       <li><b>6</b><span>different AI builders</span></li>
       <li><b>50+</b><span>AI mistakes caught in testing</span></li>
     </ul>
@@ -193,11 +193,11 @@ def page(first):
 <meta property="og:url" content="{url}">
 <meta property="og:title" content="Jānis Saulītis · Working tools built by directing AI">
 <meta property="og:description" content="{intro["desc"]}">
-<meta property="og:image" content="{SITE}og-2.png">
+<meta property="og:image" content="{SITE}og-3.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="{SITE}og-2.png">
+<meta name="twitter:image" content="{SITE}og-3.png">
 <meta name="darkreader-lock">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
