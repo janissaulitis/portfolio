@@ -117,7 +117,7 @@
 
   <!-- ===================== SECURITY ===================== -->
   <section class="group" id="security">
-    <h2>Security <small>1 tool</small></h2>
+    <h2>Security <small>2 tools</small></h2>
 
     <article class="proj" id="alerts">
       <div class="media"><video controls preload="none" playsinline poster="{M}media/alerts.jpg" src="{M}media/alerts.mp4" aria-label="Demo video: Alert Desk"></video></div>
@@ -133,6 +133,23 @@
         </ul>
         <details class="more"><summary>Read more</summary><p>A morning at a managed endpoint security desk for one invented customer, with Microsoft Defender-style alerts. Every alert gets a decision from a written playbook, the rule behind it, the next steps, an example service-level clock and the Advanced Hunting query to start with. The phishing check scores a pasted email (sender, authentication, links, attachments) and lists what to do. Device health flags unsupported Windows 10 PCs, inactive sensors, tamper protection off and rules left in audit mode. The weekly report is built from the same data, so its numbers always match.</p></details>
         <div class="actions"><a class="btn" href="https://alert-desk.streamlit.app/" target="_blank" rel="noopener">Try it live →</a><span class="quiet">May take 30 s to wake up</span></div>
+      </div>
+    </article>
+
+    <article class="proj" id="sitecheck">
+      <div class="media"><video controls preload="none" playsinline poster="{M}media/sitecheck.jpg" src="{M}media/sitecheck.mp4" aria-label="Demo video: Site Check"></video></div>
+      <div class="story">
+        <div class="strap"><h3>Site Check</h3><span>Claude Code</span></div>
+        <p class="problem">Small companies rarely know whether their website or email can be faked or broken into, and nobody checks for them.</p>
+        <ul class="pts">
+          <li><b>Does</b><span>Checks a website from the outside (HTTPS, security headers, cookies, page code, fake-email protection, known attacks) and lists each problem with the evidence, the fix and how to retest it</span></li>
+          <li><b>Result</b><span>An old nginx with HTTP/2 on: flagged for the November 2026 <code>nginx2shell</code> holes in seconds, with the upgrade to make and how to confirm it</span></li>
+          <li class="ai"><b>Tested</b><span>48 lab sites with 75 problems planted on purpose: 75 of 75 found, 0 false alarms. On real sites it agrees with Mozilla's scanner on 184 of 192 checks</span></li>
+          <li><b>Safeguard</b><span>Passive checks only: nothing is logged in to or attacked, and leaked files are looked for only after the owner proves the site is theirs</span></li>
+          <li><b>Tools used</b><span>Claude Code, Python, Streamlit, Mozilla HTTP Observatory, GitHub Actions</span></li>
+        </ul>
+        <details class="more"><summary>Read more</summary><p>Two layers: Site Check's own checks, then Mozilla HTTP Observatory as a second opinion, with every disagreement explained. Anything borderline, or that a passive check can't decide, goes under "Worth a closer look" with how to test it by hand, instead of being counted as a problem. It also looks for the year's known attacks, such as PHP2Shell and the nginx HTTP/2 holes. A daily job compares new actively exploited holes (the CISA list) with the technology each site runs. The client dashboard is a demo: an invented company and its 12-week history, with today's findings from a real check of a test-lab site.</p></details>
+        <div class="actions"><a class="btn" href="https://site-check.streamlit.app/" target="_blank" rel="noopener">Check a site →</a><a class="btn ghost" href="https://site-check.streamlit.app/dashboard" target="_blank" rel="noopener">Client dashboard (demo) →</a><span class="quiet">May take 30 s to wake up</span></div>
       </div>
     </article>
   </section>
