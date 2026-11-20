@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="lv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="darkreader-lock">
+<title>Kiberdrošības pārbaude mazajiem uzņēmumiem · Site Check</title>
+<meta name="description" content="Bezmaksas kiberdrošības pārbaude mazajiem uzņēmumiem Latvijā: mājaslapa un e-pasts, skaidrā latviešu valodā, ar konkrētiem soļiem, kas jālabo vispirms.">
+<link rel="canonical" href="https://janis-saulitis-portfolio.netlify.app/drosiba/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Vai kāds var sūtīt rēķinus tava uzņēmuma vārdā?">
+<meta property="og:description" content="Bezmaksas kiberdrošības pārbaude mazajiem uzņēmumiem. Skaidrā latviešu valodā, ar konkrētiem soļiem.">
+<meta property="og:url" content="https://janis-saulitis-portfolio.netlify.app/drosiba/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230B6B73'/%3E%3Crect x='9' y='14.5' width='14' height='10' rx='2' fill='none' stroke='white' stroke-width='2.2'/%3E%3Cpath d='M12 14.5v-3a4 4 0 0 1 8 0v3' fill='none' stroke='white' stroke-width='2.2'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500;600&display=swap">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"ProfessionalService","name":"Site Check","description":"Kiberdrošības pārbaudes un uzraudzība mazajiem uzņēmumiem Latvijā: mājaslapa, e-pasta aizsardzība, zināmas ievainojamības.","areaServed":{"@type":"Country","name":"Latvija"},"availableLanguage":["lv","en","ru"],"founder":{"@type":"Person","name":"Jānis Saulītis"},"email":"janis.saulitis.work@gmail.com","telephone":"+37125944757","url":"https://janis-saulitis-portfolio.netlify.app/drosiba/",
+  "hasOfferCatalog":{"@type":"OfferCatalog","name":"Pakas","itemListElement":[
+   {"@type":"Offer","name":"Ārējā pārbaude","price":"0","priceCurrency":"EUR"},
+   {"@type":"Offer","name":"Mājaslapas pārbaude","price":"149","priceCurrency":"EUR"},
+   {"@type":"Offer","name":"Uzņēmuma pārbaude","price":"249","priceCurrency":"EUR"},
+   {"@type":"Offer","name":"Uzraudzība","price":"29","priceCurrency":"EUR","priceSpecification":{"@type":"UnitPriceSpecification","price":"29","priceCurrency":"EUR","unitText":"mēnesī"}}]}},
+ {"@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"Vai bezmaksas pārbaude ir likumīga?","acceptedAnswer":{"@type":"Answer","text":"Jā. Bezmaksas pārbaude skatās tikai to, ko redz jebkurš mājaslapas apmeklētājs un parasts DNS vaicājums. Neko nelaužam, nepiesakāmies un neko neizmēģinām. Dziļākas pārbaudes veicam tikai ar rakstisku īpašnieka atļauju."}},
+  {"@type":"Question","name":"Vai jums vajag piekļuvi manām sistēmām?","acceptedAnswer":{"@type":"Answer","text":"Bezmaksas pārbaudei nē, tikai mājaslapas adrese. Uzņēmuma pārbaudei vajag tikai lasīšanas piekļuvi Microsoft 365 vai Google Workspace, ko piešķir jūsu administrators."}},
+  {"@type":"Question","name":"Kas salabos atrasto?","acceptedAnswer":{"@type":"Answer","text":"Jūsu mājaslapas izstrādātājs, hostinga uzņēmums vai IT cilvēks. Ziņojumā katrai problēmai ir soļi, kā to salabot, un kā pārbaudīt, ka salabots. Ja jums tāda cilvēka nav, ieteiksim uzticamus partnerus."}},
+  {"@type":"Question","name":"Cik ilgi tas aizņem?","acceptedAnswer":{"@type":"Answer","text":"Bezmaksas pārbaudes ziņojumu saņemsiet 1–2 darba dienu laikā."}}]}]}
+</script>
+<style>
+/* One promise, one action. The only loud element on the page is the forged email in the hero; everything else stays quiet. */
+:root {
+  --bg: #F3F5F4; --surface: #FFFFFF; --ink: #0F1716; --muted: #55625F; --line: #D9E0DE;
+  --accent: #0B6B73; --accent-ink: #FFFFFF; --accent-soft: #E3F1F1; --accent-text: #0A5E66;
+  --danger: #B3261E; --danger-soft: #FBEAE8; --warn: #8A5A00;
+  --sans: "Geist", system-ui, -apple-system, "Segoe UI", sans-serif; --mono: "Geist Mono", ui-monospace, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0B0F10; --surface: #131A1B; --ink: #E5ECEB; --muted: #95A3A0; --line: #263133;
+  --accent: #45C2C7; --accent-ink: #062224; --accent-soft: #10292B; --accent-text: #7FD9DC;
+  --danger: #FF8A80; --danger-soft: #2C1513; --warn: #EDB451; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #0B0F10; --surface: #131A1B; --ink: #E5ECEB; --muted: #95A3A0; --line: #263133;
+  --accent: #45C2C7; --accent-ink: #062224; --accent-soft: #10292B; --accent-text: #7FD9DC;
+  --danger: #FF8A80; --danger-soft: #2C1513; --warn: #EDB451; color-scheme: dark }
+* { box-sizing: border-box }
+html { background: var(--bg) }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.6 var(--sans); -webkit-font-smoothing: antialiased }
+a { color: var(--accent-text) }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px }
+header.top { display: flex; align-items: center; justify-content: space-between; padding: 20px 0 }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: -.01em; color: var(--ink); text-decoration: none }
+.brand i { width: 30px; height: 30px; border-radius: 8px; background: var(--accent); display: grid; place-items: center }
+.brand svg { width: 17px; height: 17px; stroke: var(--accent-ink); fill: none; stroke-width: 2.2; stroke-linecap: round }
+.theme { border: 1px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 999px; padding: 7px 14px; font: 500 14px var(--sans); cursor: pointer }
+.theme:focus-visible, .btn:focus-visible, summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px }
+
+/* hero */
+.hero { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: 56px; align-items: center; padding: 40px 0 72px }
+h1 { font-size: clamp(34px, 4.6vw, 54px); line-height: 1.06; letter-spacing: -.03em; margin: 0 0 20px; font-weight: 800; text-wrap: balance }
+.lead { font-size: 19px; color: var(--muted); margin: 0 0 28px; max-width: 34em }
+.lead b { color: var(--ink); font-weight: 600 }
+.btn { display: inline-flex; align-items: center; gap: 10px; background: var(--accent); color: var(--accent-ink); text-decoration: none; font-weight: 650; font-size: 17px; padding: 15px 24px; border-radius: 12px }
+.btn:hover { filter: brightness(1.07) }
+.after { font-size: 14.5px; color: var(--muted); margin-top: 14px }
+.after a { color: var(--muted) }
+
+/* the forged email: the one loud element */
+.mail { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; box-shadow: 0 1px 0 var(--line); overflow: hidden; position: relative }
+.mail .bar { display: flex; gap: 6px; padding: 12px 16px; border-bottom: 1px solid var(--line) }
+.mail .bar span { width: 10px; height: 10px; border-radius: 50%; background: var(--line) }
+.mail dl { margin: 0; padding: 18px 22px 6px; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 6px 14px; font: 14px/1.5 var(--mono) }
+.mail dt { color: var(--muted) }
+.mail dd { margin: 0; overflow-wrap: anywhere }
+.mail .subj { font-family: var(--sans); font-weight: 650; font-size: 16px }
+.mail .body { padding: 10px 22px 26px; font-size: 15.5px; color: var(--ink) }
+.mail .body p { margin: 8px 0 }
+.mail .iban { font-family: var(--mono); font-size: 14px; background: var(--bg); padding: 2px 6px; border-radius: 6px }
+.stamp { position: absolute; right: 20px; bottom: 22px; transform: rotate(-8deg); border: 2.5px solid var(--danger); color: var(--danger); font: 700 14px/1 var(--mono); letter-spacing: .06em; padding: 8px 10px; border-radius: 6px; background: var(--danger-soft) }
+.mail-note { font-size: 14px; color: var(--muted); margin: 12px 4px 0 }
+
+/* sections */
+section { padding: 64px 0; border-top: 1px solid var(--line) }
+h2 { font-size: clamp(26px, 3vw, 34px); line-height: 1.15; letter-spacing: -.02em; margin: 0 0 12px; font-weight: 750 }
+.sub { color: var(--muted); margin: 0 0 32px; max-width: 40em }
+.facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px }
+.fact b { display: block; font: 700 clamp(40px, 5vw, 56px)/1 var(--sans); letter-spacing: -.03em; margin-bottom: 10px }
+.fact.hot b { color: var(--danger) }
+.fact p { margin: 0; color: var(--muted); font-size: 16px }
+.method { font-size: 14px; color: var(--muted); margin-top: 28px }
+ol.steps { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; counter-reset: s }
+ol.steps li { counter-increment: s; border-top: 2px solid var(--ink); padding-top: 16px }
+ol.steps li::before { content: counter(s); font: 600 14px var(--mono); color: var(--muted); display: block; margin-bottom: 6px }
+ol.steps h3 { margin: 0 0 6px; font-size: 19px }
+ol.steps p { margin: 0; color: var(--muted); font-size: 16px }
+table.plans { width: 100%; border-collapse: collapse; font-size: 16px }
+.plans th, .plans td { text-align: left; vertical-align: top; padding: 18px 16px 18px 0; border-bottom: 1px solid var(--line) }
+.plans thead th { font: 500 14px var(--sans); color: var(--muted); padding-top: 0 }
+.plans .name { font-weight: 650; font-size: 17px; white-space: nowrap }
+.plans .price { font: 600 17px var(--mono); white-space: nowrap }
+.plans .price small { display: block; font: 400 13px var(--sans); color: var(--muted) }
+.plans .free .price { color: var(--accent-text) }
+.plans td.need { color: var(--muted) }
+.note { font-size: 14.5px; color: var(--muted); margin-top: 18px }
+.dont { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 40px; padding: 0; margin: 0; list-style: none }
+.dont li { padding-left: 28px; position: relative }
+.dont li::before { content: "—"; position: absolute; left: 0; color: var(--accent-text); font-weight: 700 }
+details { border-bottom: 1px solid var(--line); padding: 16px 0 }
+details:first-of-type { border-top: 1px solid var(--line) }
+summary { cursor: pointer; font-weight: 600; font-size: 17.5px; list-style: none; display: flex; justify-content: space-between; gap: 16px }
+summary::after { content: "+"; font: 500 20px/1 var(--mono); color: var(--muted) }
+details[open] summary::after { content: "–" }
+summary::-webkit-details-marker { display: none }
+details p { margin: 10px 0 0; color: var(--muted); max-width: 46em }
+.contact { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 48px; align-items: start }
+.contact ul { list-style: none; padding: 0; margin: 0; font-size: 17px }
+.contact li { padding: 10px 0; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; gap: 16px }
+.contact li span { color: var(--muted) }
+footer { padding: 32px 0 48px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--line) }
+
+@media (max-width: 860px) {
+  .hero { grid-template-columns: 1fr; gap: 36px; padding: 20px 0 56px }
+  .facts, ol.steps { grid-template-columns: 1fr; gap: 24px }
+  .dont, .contact { grid-template-columns: 1fr; gap: 12px }
+  .contact { gap: 28px }
+}
+@media (max-width: 640px) {
+  .wrap { padding: 0 16px }
+  body { font-size: 16px }
+  .lead { font-size: 17.5px }
+  .btn { width: 100%; justify-content: center }
+  section { padding: 48px 0 }
+  .stamp { bottom: 16px; right: 12px; font-size: 12.5px }
+  .mail dl { padding: 16px 16px 4px; font-size: 13px }
+  .mail .body { padding: 8px 16px 18px; font-size: 15px }
+  /* plans become stacked rows */
+  .plans thead { display: none }
+  .plans, .plans tbody, .plans tr, .plans td { display: block; width: 100% }
+  .plans tr { border-bottom: 1px solid var(--line); padding: 16px 0 }
+  .plans td { border: 0; padding: 3px 0 }
+  .plans td.price { margin-top: 4px }
+}
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="#"><i><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></i>Site Check</a>
+    <button class="theme" type="button" id="theme" aria-label="Pārslēgt gaišo vai tumšo režīmu">Tumšs</button>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div>
+        <h1>Vai kāds var sūtīt rēķinus tava uzņēmuma vārdā?</h1>
+        <p class="lead"><b>85% no 103 Rīgas mazo uzņēmumu mājaslapām, ko pārbaudījām: jā.</b> Bezmaksas pārbaude parāda, vai tavs uzņēmums ir starp tiem, un ko darīt vispirms. Skaidrā latviešu valodā, bez žargona.</p>
+        <a class="btn" href="mailto:janis.saulitis.work@gmail.com?subject=Bezmaksas%20dro%C5%A1%C4%ABbas%20p%C4%81rbaude&amp;body=Labdien!%20L%C5%ABdzu%2C%20p%C4%81rbaudiet%20m%C5%ABsu%20m%C4%81jaslapu%3A%20">Pieteikt bezmaksas pārbaudi</a>
+        <p class="after">Atsūti savas mājaslapas adresi. Ziņojumu saņemsi 1–2 darba dienu laikā. <a href="https://site-check.streamlit.app/">Vai pārbaudi pats (angliski)</a>.</p>
+      </div>
+      <figure style="margin:0">
+        <div class="mail" role="img" aria-label="Piemērs: viltots e-pasts uzņēmuma vārdā ar lūgumu maksāt uz jaunu bankas kontu">
+          <div class="bar"><span></span><span></span><span></span></div>
+          <span class="stamp">VILTOTS</span>
+          <dl>
+            <dt>No:</dt><dd>gramatvediba@tavsuznemums.lv</dd>
+            <dt>Kam:</dt><dd>klients@piemers.lv</dd>
+            <dt>Tēma:</dt><dd class="subj">Rēķins Nr. 1187 — jauns bankas konts</dd>
+          </dl>
+          <div class="body">
+            <p>Labdien! Lūdzam turpmāk maksājumus veikt uz mūsu jauno kontu <span class="iban">LT12 3456 7890 1234 5678</span>.</p>
+            <p>Paldies, grāmatvedība</p>
+          </div>
+        </div>
+        <figcaption class="mail-note">Adrese ir īsta, sūtītājs nav. Ja tavam domēnam nav DMARC aizsardzības, šāda vēstule nonāk klientu iesūtnēs.</figcaption>
+      </figure>
+    </div>
+
+    <section aria-labelledby="h-found">
+      <h2 id="h-found">Ko atradām 103 Rīgas mazo uzņēmumu mājaslapās</h2>
+      <p class="sub">Zobārsti, veterinārārsti, grāmatveži, advokāti, bērnudārzi, autoservisi, interneta veikali un citi. Lieliem uzņēmumiem ir drošības komandas. Mazajiem — parasti neviena.</p>
+      <div class="facts">
+        <div class="fact hot"><b>85%</b><p>nav aizsardzības pret viltotiem e-pastiem uzņēmuma vārdā (nav DMARC, vai tas tikai novēro)</p></div>
+        <div class="fact"><b>23%</b><p>joprojām pieņem novecojušu TLS 1.0 / 1.1 šifrēšanu</p></div>
+        <div class="fact"><b>4</b><p>vietnes rādīja PHP versiju ar ievainojamību, ko uzbrucēji pašlaik aktīvi izmanto</p></div>
+      </div>
+      <p class="method">Pārbaudīts 2026. gada novembrī, tikai pasīvi: tas, ko redz jebkurš apmeklētājs un parasts DNS vaicājums. Uzņēmumu nosaukumus nepublicējam.</p>
+    </section>
+
+    <section aria-labelledby="h-how">
+      <h2 id="h-how">Kā tas notiek</h2>
+      <p class="sub">Mēs atrodam un izskaidrojam. Salabo tavs mājaslapas izstrādātājs, hostings vai IT cilvēks — ar mūsu soļiem tas ir ātri.</p>
+      <ol class="steps">
+        <li><h3>Atsūti adresi</h3><p>Tikai mājaslapas adrese. Paroles un piekļuve nav vajadzīgas.</p></li>
+        <li><h3>Mēs pārbaudām</h3><p>HTTPS, drošības iestatījumi, novecojusi programmatūra, zināmas ievainojamības un e-pasta aizsardzība. Otrs neatkarīgs skeneris pārbauda to pašu.</p></li>
+        <li><h3>Saņem ziņojumu</h3><p>Kas jālabo vispirms, kāpēc tas ir svarīgi tavam uzņēmumam, kā salabot un kā pārbaudīt, ka salabots.</p></li>
+      </ol>
+    </section>
+
+    <section aria-labelledby="h-plans">
+      <h2 id="h-plans">Pakas un cenas</h2>
+      <p class="sub">Katrs nākamais līmenis prasa nedaudz vairāk atļaujas no tevis. Dziļākas pārbaudes tikai ar rakstisku piekrišanu.</p>
+      <table class="plans">
+        <thead><tr><th>Paka</th><th>Ko pārbaudām</th><th>Kas no tevis vajadzīgs</th><th>Cena</th></tr></thead>
+        <tbody>
+          <tr class="free"><td class="name">Ārējā pārbaude</td><td>Viss, ko redz jebkurš apmeklētājs: HTTPS, drošības iestatījumi, sīkdatnes, novecojusi programmatūra, e-pasta aizsardzība (SPF, DMARC)</td><td class="need">Mājaslapas adrese</td><td class="price">Bez maksas</td></tr>
+          <tr><td class="name">Mājaslapas pārbaude</td><td>Viss iepriekšējais + nopludināti faili (.env, .git, rezerves kopijas), droša aktīvā skenēšana, apakšdomēni, WordPress spraudņu versijas</td><td class="need">Pierādījums, ka vietne ir tava, un parakstīta atļauja</td><td class="price">€149<small>vienreiz</small></td></tr>
+          <tr><td class="name">Uzņēmuma pārbaude</td><td>Microsoft 365 vai Google iestatījumi, divpakāpju pieteikšanās, darbinieku paroles zināmās noplūdēs</td><td class="need">Lasīšanas piekļuve no tava administratora</td><td class="price">€249<small>vienreiz</small></td></tr>
+          <tr><td class="name">Uzraudzība</td><td>Iknedēļas atkārtota pārbaude, brīdinājums tajā pašā dienā, kad parādās jauna aktīvi izmantota ievainojamība, un ikmēneša kopsavilkums</td><td class="need">Tāda pati atļauja kā mājaslapas pārbaudei</td><td class="price">€29<small>mēnesī</small></td></tr>
+        </tbody>
+      </table>
+      <p class="note">Pilota cenas pirmajiem klientiem, bez PVN. Pilnu ielaušanās testu (penetrācijas testu) mēs neveicam: tādos gadījumos ieteiksim uzticamus partnerus.</p>
+    </section>
+
+    <section aria-labelledby="h-dont">
+      <h2 id="h-dont">Ko mēs nedarām</h2>
+      <p class="sub">Drošība sākas ar uzticēšanos.</p>
+      <ul class="dont">
+        <li>Nelaužam un neizmēģinām uzbrukumus bez rakstiskas atļaujas.</li>
+        <li>Nepublicējam atrastās problēmas un uzņēmumu nosaukumus.</li>
+        <li>Nesolām “100% drošību” — to nevar solīt neviens.</li>
+        <li>Nebiedējam: katrs atradums ar pierādījumu un skaidru nākamo soli.</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="h-faq">
+      <h2 id="h-faq">Biežāk uzdotie jautājumi</h2>
+      <details><summary>Vai bezmaksas pārbaude ir likumīga?</summary><p>Jā. Tā skatās tikai to, ko redz jebkurš mājaslapas apmeklētājs un parasts DNS vaicājums. Neko nelaužam, nepiesakāmies un neko neizmēģinām. Dziļākas pārbaudes veicam tikai ar rakstisku īpašnieka atļauju.</p></details>
+      <details><summary>Vai jums vajag piekļuvi manām sistēmām?</summary><p>Bezmaksas pārbaudei — nē, tikai mājaslapas adrese. Uzņēmuma pārbaudei vajag tikai lasīšanas piekļuvi Microsoft 365 vai Google Workspace, ko piešķir tavs administrators.</p></details>
+      <details><summary>Kas salabos atrasto?</summary><p>Tavs mājaslapas izstrādātājs, hostinga uzņēmums vai IT cilvēks. Ziņojumā katrai problēmai ir soļi, kā to salabot, un kā pārbaudīt, ka salabots. Ja tev tāda cilvēka nav, ieteiksim uzticamus partnerus.</p></details>
+      <details><summary>Kāpēc tieši mazajiem uzņēmumiem?</summary><p>Mazie uzņēmumi glabā pacientu, klientu un bērnu datus tāpat kā lielie, bet parasti bez IT komandas. Uzbrucēji to zina un meklē vājās vietas automātiski.</p></details>
+      <details><summary>Cik ilgi tas aizņem?</summary><p>Bezmaksas pārbaudes ziņojumu saņemsi 1–2 darba dienu laikā.</p></details>
+    </section>
+
+    <section aria-labelledby="h-contact">
+      <div class="contact">
+        <div>
+          <h2 id="h-contact">Sāc ar bezmaksas pārbaudi</h2>
+          <p class="sub" style="margin-bottom:24px">Atsūti mājaslapas adresi. Nekādu saistību.</p>
+          <a class="btn" href="mailto:janis.saulitis.work@gmail.com?subject=Bezmaksas%20dro%C5%A1%C4%ABbas%20p%C4%81rbaude&amp;body=Labdien!%20L%C5%ABdzu%2C%20p%C4%81rbaudiet%20m%C5%ABsu%20m%C4%81jaslapu%3A%20">Pieteikt bezmaksas pārbaudi</a>
+        </div>
+        <ul>
+          <li><span>E-pasts</span><a href="mailto:janis.saulitis.work@gmail.com">janis.saulitis.work@gmail.com</a></li>
+          <li><span>Tālrunis</span><a href="tel:+37125944757">+371 25944757</a></li>
+          <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/janissaulitis/">Jānis Saulītis</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>Site Check · Jānis Saulītis · Rīga · <a href="/">Projekti</a></footer>
+</div>
+<script>
+(() => {
+  const root = document.documentElement, btn = document.getElementById("theme");
+  try { const t = localStorage.getItem("theme"); if (t) root.dataset.theme = t; } catch (e) {}
+  const dark = () => root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+  const label = () => { btn.textContent = dark() ? "Gaišs" : "Tumšs"; };
+  label();
+  btn.addEventListener("click", () => {
+    root.dataset.theme = dark() ? "light" : "dark";
+    try { localStorage.setItem("theme", root.dataset.theme); } catch (e) {}
+    label();
+  });
+})();
+</script>
+</body>
+</html>
