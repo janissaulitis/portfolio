@@ -21,9 +21,10 @@
  {"@type":"ProfessionalService","name":"Site Check","description":"Kiberdrošības pārbaudes un uzraudzība mazajiem uzņēmumiem Latvijā: mājaslapa, e-pasta aizsardzība, zināmas ievainojamības.","areaServed":{"@type":"Country","name":"Latvija"},"availableLanguage":["lv","en","ru"],"founder":{"@type":"Person","name":"Jānis Saulītis"},"email":"janis.saulitis.work@gmail.com","telephone":"+37125944757","url":"https://janis-saulitis-portfolio.netlify.app/drosiba/",
   "hasOfferCatalog":{"@type":"OfferCatalog","name":"Pakas","itemListElement":[
    {"@type":"Offer","name":"Ārējā pārbaude","price":"0","priceCurrency":"EUR"},
-   {"@type":"Offer","name":"Mājaslapas pārbaude","price":"149","priceCurrency":"EUR"},
-   {"@type":"Offer","name":"Uzņēmuma pārbaude","price":"249","priceCurrency":"EUR"},
-   {"@type":"Offer","name":"Uzraudzība","price":"29","priceCurrency":"EUR","priceSpecification":{"@type":"UnitPriceSpecification","price":"29","priceCurrency":"EUR","unitText":"mēnesī"}}]}},
+   {"@type":"Offer","name":"Drošības gads (pārbaude, atkārtota pārbaude, 12 mēneši uzraudzības)","price":"199","priceCurrency":"EUR"},
+   {"@type":"Offer","name":"Mājaslapas pārbaude","price":"99","priceCurrency":"EUR"},
+   {"@type":"Offer","name":"Uzņēmuma pārbaude","price":"179","priceCurrency":"EUR"},
+   {"@type":"Offer","name":"Uzraudzība","price":"15","priceCurrency":"EUR","priceSpecification":{"@type":"UnitPriceSpecification","price":"15","priceCurrency":"EUR","unitText":"mēnesī"}}]}},
  {"@type":"FAQPage","mainEntity":[
   {"@type":"Question","name":"Vai bezmaksas pārbaude ir likumīga?","acceptedAnswer":{"@type":"Answer","text":"Jā. Bezmaksas pārbaude skatās tikai to, ko redz jebkurš mājaslapas apmeklētājs un parasts DNS vaicājums. Neko nelaužam, nepiesakāmies un neko neizmēģinām. Dziļākas pārbaudes veicam tikai ar rakstisku īpašnieka atļauju."}},
   {"@type":"Question","name":"Vai jums vajag piekļuvi manām sistēmām?","acceptedAnswer":{"@type":"Answer","text":"Bezmaksas pārbaudei nē, tikai mājaslapas adrese. Uzņēmuma pārbaudei vajag tikai lasīšanas piekļuvi Microsoft 365 vai Google Workspace, ko piešķir jūsu administrators."}},
@@ -105,6 +106,12 @@ table.plans { width: 100%; border-collapse: collapse; font-size: 16px }
 .plans .price small { display: block; font: 400 13px var(--sans); color: var(--muted) }
 .plans .free .price { color: var(--accent-text) }
 .plans td.need { color: var(--muted) }
+.bundle { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px; align-items: center; border: 2px solid var(--accent); background: var(--accent-soft); border-radius: 16px; padding: 22px 26px; margin: 0 0 28px }
+.bundle h3 { margin: 6px 0 6px; font-size: 22px; letter-spacing: -.01em }
+.bundle p { margin: 0; color: var(--muted); font-size: 16px; max-width: 38em }
+.bundle .tag { font: 600 12.5px var(--mono); color: var(--accent-text) }
+.bprice { font: 700 40px/1 var(--sans); letter-spacing: -.02em; text-align: right; white-space: nowrap }
+.bprice small { display: block; font: 400 14px var(--sans); color: var(--muted); margin-top: 6px; letter-spacing: 0 }
 .note { font-size: 14.5px; color: var(--muted); margin-top: 18px }
 .dont { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 40px; padding: 0; margin: 0; list-style: none }
 .dont li { padding-left: 28px; position: relative }
@@ -138,6 +145,8 @@ footer { padding: 32px 0 48px; color: var(--muted); font-size: 14px; border-top:
   .mail dl { padding: 16px 16px 4px; font-size: 13px }
   .mail .body { padding: 8px 16px 18px; font-size: 15px }
   /* plans become stacked rows */
+  .bundle { grid-template-columns: 1fr; padding: 18px }
+  .bprice { text-align: left }
   .plans thead { display: none }
   .plans, .plans tbody, .plans tr, .plans td { display: block; width: 100% }
   .plans tr { border-bottom: 1px solid var(--line); padding: 16px 0 }
@@ -203,17 +212,22 @@ footer { padding: 32px 0 48px; color: var(--muted); font-size: 14px; border-top:
 
     <section aria-labelledby="h-plans">
       <h2 id="h-plans">Pakas un cenas</h2>
-      <p class="sub">Katrs nākamais līmenis prasa nedaudz vairāk atļaujas no tevis. Dziļākas pārbaudes tikai ar rakstisku piekrišanu.</p>
+      <p class="sub">Lielākajai daļai mazo uzņēmumu pietiek ar Drošības gadu. Dziļākas pārbaudes tikai ar rakstisku piekrišanu.</p>
+      <div class="bundle">
+        <div><span class="tag">Izdevīgākais</span><h3>Drošības gads</h3>
+          <p>Mājaslapas un e-pasta pārbaude, atkārtota pārbaude pēc labojumiem un 12 mēneši uzraudzības ar brīdinājumiem tajā pašā dienā. Viens lēmums, viens rēķins.</p></div>
+        <div class="bprice">€199<small>gadā, par uzņēmumu</small></div>
+      </div>
       <table class="plans">
         <thead><tr><th>Paka</th><th>Ko pārbaudām</th><th>Kas no tevis vajadzīgs</th><th>Cena</th></tr></thead>
         <tbody>
           <tr class="free"><td class="name">Ārējā pārbaude</td><td>Viss, ko redz jebkurš apmeklētājs: HTTPS, drošības iestatījumi, sīkdatnes, novecojusi programmatūra, e-pasta aizsardzība (SPF, DMARC)</td><td class="need">Mājaslapas adrese</td><td class="price">Bez maksas</td></tr>
-          <tr><td class="name">Mājaslapas pārbaude</td><td>Viss iepriekšējais + nopludināti faili (.env, .git, rezerves kopijas), droša aktīvā skenēšana, apakšdomēni, WordPress spraudņu versijas</td><td class="need">Pierādījums, ka vietne ir tava, un parakstīta atļauja</td><td class="price">€149<small>vienreiz</small></td></tr>
-          <tr><td class="name">Uzņēmuma pārbaude</td><td>Microsoft 365 vai Google iestatījumi, divpakāpju pieteikšanās, darbinieku paroles zināmās noplūdēs</td><td class="need">Lasīšanas piekļuve no tava administratora</td><td class="price">€249<small>vienreiz</small></td></tr>
-          <tr><td class="name">Uzraudzība</td><td>Iknedēļas atkārtota pārbaude, brīdinājums tajā pašā dienā, kad parādās jauna aktīvi izmantota ievainojamība, un ikmēneša kopsavilkums</td><td class="need">Tāda pati atļauja kā mājaslapas pārbaudei</td><td class="price">€29<small>mēnesī</small></td></tr>
+          <tr><td class="name">Mājaslapas pārbaude</td><td>Viss iepriekšējais + nopludināti faili (.env, .git, rezerves kopijas), droša aktīvā skenēšana, apakšdomēni, WordPress spraudņu versijas. Ar atkārtotu pārbaudi pēc labojumiem.</td><td class="need">Pierādījums, ka vietne ir tava, un parakstīta atļauja</td><td class="price">€99<small>vienreiz</small></td></tr>
+          <tr><td class="name">Uzņēmuma pārbaude</td><td>Microsoft 365 vai Google iestatījumi, divpakāpju pieteikšanās, darbinieku paroles zināmās noplūdēs</td><td class="need">Lasīšanas piekļuve no tava administratora</td><td class="price">€179<small>vienreiz</small></td></tr>
+          <tr><td class="name">Uzraudzība</td><td>Iknedēļas atkārtota pārbaude, brīdinājums tajā pašā dienā, kad parādās jauna bīstama ievainojamība, un ikmēneša kopsavilkums</td><td class="need">Tāda pati atļauja kā mājaslapas pārbaudei</td><td class="price">€15<small>mēnesī vai €149 gadā, par uzņēmumu, ne par darbinieku</small></td></tr>
         </tbody>
       </table>
-      <p class="note">Pilota cenas pirmajiem klientiem, bez PVN. Pilnu ielaušanās testu (penetrācijas testu) mēs neveicam: tādos gadījumos ieteiksim uzticamus partnerus.</p>
+      <p class="note">Pilota cenas, bez PVN. IT uzņēmumiem, mājaslapu izstrādātājiem un hostingiem ir partneru cenas — <a href="mailto:janis.saulitis.work@gmail.com?subject=Site%20Check%20partneriem">uzraksti</a>. Pilnu ielaušanās testu (penetrācijas testu) mēs neveicam: tādos gadījumos ieteiksim uzticamus partnerus.</p>
     </section>
 
     <section aria-labelledby="h-dont">
@@ -221,7 +235,7 @@ footer { padding: 32px 0 48px; color: var(--muted); font-size: 14px; border-top:
       <p class="sub">Drošība sākas ar uzticēšanos.</p>
       <ul class="dont">
         <li>Nelaužam un neizmēģinām uzbrukumus bez rakstiskas atļaujas.</li>
-        <li>Nepublicējam atrastās problēmas un uzņēmumu nosaukumus.</li>
+        <li>Nekad nepublicējam tavu vārdu un nepārdodam tavus datus.</li>
         <li>Nesolām “100% drošību” — to nevar solīt neviens.</li>
         <li>Nebiedējam: katrs atradums ar pierādījumu un skaidru nākamo soli.</li>
       </ul>
